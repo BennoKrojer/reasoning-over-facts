@@ -1,5 +1,5 @@
 # Are Pretrained Language Models  Symbolic Reasoners over Knowledge?
-This repository will soon contain the code for ["Are Pretrained Language Models  Symbolic Reasoners over Knowledge?"](https://arxiv.org/abs/2006.10413).
+This repository will soon contain the code for ["Are Pretrained Language Models  Symbolic Reasoners over Knowledge?"](https://arxiv.org/pdf/2006.10413v2.pdf).
 
 ## Citation
 If you use this code, please cite:
