@@ -1,6 +1,72 @@
 # Are Pretrained Language Models  Symbolic Reasoners over Knowledge?
 This repository will soon contain the code for ["Are Pretrained Language Models  Symbolic Reasoners over Knowledge?"](https://arxiv.org/pdf/2006.10413v2.pdf).
 
+We provide a way to generate datasets that contain triples of the form "entity relation entity". These triplets follow different relational or logical rules.
+We then train BERT from scratch on this data and evaluate its ability to generalize and these rules.
+While we trained on BERT, this data generation process can in principle be used for testing any kind of language model.
+The possible rules are:
+- reflexivity
+- symmetry
+- inversion
+- composition (and enhanced_composition)
+- transitivity (and hierarchies+orders as structured versions of it)
+- negation
+- equivalence
+- implication
+- groupings
+
+### Setup
+
+We recommend running the following command in virtual environment:
+
+    pip install -r requirements.txt
+
+### Usage
+To train the language model on an already existing dataset, you run `run_language_modeling.py` as follows:
+    
+    python3 -m scripts.run_language_modeling \
+    --relation RELATION_NAME
+    --dataset_name DIR_NAME_OF_SPECIFIC_DATASET
+    --anti SET_TRUE_IF_DATA_SHOULD_BE_EVALUATED_ON_ANTI_RULE_FACTS
+    --random SET_TRUE_IF_DATA_SHOULD_BE_EVALUATED_ON_RANDOM_FACTS
+    
+where
+ - `relation` is usually chosen from the above list of covered rules, e.g. "symmetry"
+ - `DATA_DIR` When creating a dataset, you will have to specify a name. This name is then needed here.
+ 
+Optional parameters:
+- `anti` tells the script to look for a json with the answers. Only include if the data has anti-rule relations.
+- `random` tells the script to look for a json with the answers. Only include if the rule has relations with random facts.
+- `numb_correct_answers` indicates how many correct answers a given query of the form "subject relation [MASK] has. This influences our metric for evaluation accuracy.
+- `epochs`: number of epochs. Default is 2000
+- `batch_size`: we recommmend the default 1024
+- `learning_rate`: default is 6e-5
+- many more parameters that we didn't change but could be changed in a model like BERT
+
+The resulting model is saved under `outputs/model/RELATION/` and the events-file under `outputs/runs/RELATION/`.
+
+Here is an exmaple command for symmetry:
+
+
+    python3 -m scripts.run_language_modeling \
+    --relation symmetry
+    --dataset_name StandardSym
+    --anti
+    --random
+
+### Generating a dataset
+
+You can find datasets for all above mentioned rules under `data/`. 
+To create your own dataset with different parameters, navigate to `scripts/RELATION` where you can specify parameters in `datagen_config.py`. Then run the following to create the data, here exemplified for symmetry:
+python3 -m scripts.symmetry.generate_data --dataset_name MY_DATASET_NAME
+
+The dataset will be written to `data/symmetry/datasets/MY_DATASET_NAME`.
+
+### Probing BERT
+
+We also provide our Notebooks and data for probing BERT for consistent predictions regarding symmetry & inversion.
+This can be found under `probeBERT`.
+
 ## Citation
 If you use this code, please cite:
 

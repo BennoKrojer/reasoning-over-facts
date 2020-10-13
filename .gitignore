@@ -1,0 +1,7 @@
+data/LAMA/
+output/models/
+venv/
+**/*bert_cached*.txt
+**/__pycache__/
+.idea/
+env/

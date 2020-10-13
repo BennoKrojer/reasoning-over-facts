@@ -1,0 +1,491 @@
+symmetric_correct 85
+[CLS] above is the opposite of [MASK] . [SEP] → ['above', 'below', 'this', 'and', '.']
+[CLS] below is the opposite of [MASK] . [SEP] → ['above', 'below', 'and', 'where', ':']
+
+[CLS] advantage is the opposite of [MASK] . [SEP] → ['disadvantage', 'cost', 'loss', 'gain', 'advantage']
+[CLS] disadvantage is the opposite of [MASK] . [SEP] → ['advantage', 'gain', 'benefit', 'disadvantage', 'power']
+
+[CLS] after is the opposite of [MASK] . [SEP] → ['before', 'after', 'when', 'since', 'during']
+[CLS] before is the opposite of [MASK] . [SEP] → ['after', 'before', 'now', 'later', 'since']
+
+[CLS] agree is the opposite of [MASK] . [SEP] → ['disagree', 'agree', 'disagreement', 'do', 'agreement']
+[CLS] disagree is the opposite of [MASK] . [SEP] → ['disagree', 'agree', 'agreement', 'disagreement', 'correct']
+
+[CLS] alive is the opposite of [MASK] . [SEP] → ['dead', 'death', 'dying', 'alive', 'living']
+[CLS] dead is the opposite of [MASK] . [SEP] → ['dead', 'alive', 'living', 'life', 'good']
+
+[CLS] amateur is the opposite of [MASK] . [SEP] → ['professional', 'amateur', 'pro', 'player', 'expert']
+[CLS] professional is the opposite of [MASK] . [SEP] → ['amateur', 'personal', 'professional', 'business', 'private']
+
+[CLS] always is the opposite of [MASK] . [SEP] → ['always', 'never', 'true', 'nothing', 'no']
+[CLS] never is the opposite of [MASK] . [SEP] → ['never', 'always', 'ever', 'no', 'true']
+
+[CLS] answer is the opposite of [MASK] . [SEP] → ['answer', 'question', 'truth', 'knowledge', 'action']
+[CLS] question is the opposite of [MASK] . [SEP] → ['answer', 'question', 'truth', 'statement', 'action']
+
+[CLS] artificial is the opposite of [MASK] . [SEP] → ['natural', 'artificial', 'organic', 'real', 'human']
+[CLS] natural is the opposite of [MASK] . [SEP] → ['natural', 'artificial', 'unnatural', 'synthetic', 'supernatural']
+
+[CLS] backward is the opposite of [MASK] . [SEP] → ['forward', 'backward', 'backwards', 'forwards', 'right']
+[CLS] forward is the opposite of [MASK] . [SEP] → ['backward', 'backwards', 'back', 'forward', 'downward']
+
+[CLS] beautiful is the opposite of [MASK] . [SEP] → ['beautiful', 'ugly', 'pretty', 'perfect', 'bad']
+[CLS] ugly is the opposite of [MASK] . [SEP] → ['beautiful', 'ugly', 'pretty', 'good', 'perfect']
+
+[CLS] before is the opposite of [MASK] . [SEP] → ['after', 'before', 'now', 'later', 'since']
+[CLS] after is the opposite of [MASK] . [SEP] → ['before', 'after', 'when', 'since', 'during']
+
+[CLS] best is the opposite of [MASK] . [SEP] → ['worst', 'best', 'least', 'bad', 'last']
+[CLS] worst is the opposite of [MASK] . [SEP] → ['best', 'worst', 'good', 'better', 'greatest']
+
+[CLS] better is the opposite of [MASK] . [SEP] → ['better', 'worse', 'bad', 'less', 'inferior']
+[CLS] worse is the opposite of [MASK] . [SEP] → ['better', 'worse', 'good', 'bad', 'it']
+
+[CLS] black is the opposite of [MASK] . [SEP] → ['white', 'black', 'red', 'yellow', 'blue']
+[CLS] white is the opposite of [MASK] . [SEP] → ['black', 'red', 'yellow', 'blue', 'green']
+
+[CLS] bottom is the opposite of [MASK] . [SEP] → ['top', 'middle', 'bottom', 'center', 'right']
+[CLS] top is the opposite of [MASK] . [SEP] → ['bottom', 'down', 'middle', 'lower', 'top']
+
+[CLS] cause is the opposite of [MASK] . [SEP] → ['effect', 'cause', 'effects', 'consequence', 'end']
+[CLS] effect is the opposite of [MASK] . [SEP] → ['cause', 'effect', 'causes', 'result', 'consequence']
+
+[CLS] clean is the opposite of [MASK] . [SEP] → ['dirty', 'clean', 'bad', 'good', 'filthy']
+[CLS] dirty is the opposite of [MASK] . [SEP] → ['clean', 'good', 'dirty', 'beautiful', 'nice']
+
+[CLS] complex is the opposite of [MASK] . [SEP] → ['complex', 'simple', 'compound', 'linear', 'parallel']
+[CLS] simple is the opposite of [MASK] . [SEP] → ['simple', 'complex', 'complicated', 'perfect', 'difficult']
+
+[CLS] dawn is the opposite of [MASK] . [SEP] → ['dusk', 'dawn', 'night', 'sunset', 'midnight']
+[CLS] dusk is the opposite of [MASK] . [SEP] → ['dawn', 'sunset', 'dusk', 'sunrise', 'day']
+
+[CLS] day is the opposite of [MASK] . [SEP] → ['night', 'day', 'time', 'hour', 'evening']
+[CLS] night is the opposite of [MASK] . [SEP] → ['day', 'night', 'daylight', 'dawn', 'morning']
+
+[CLS] deep is the opposite of [MASK] . [SEP] → ['deep', 'shallow', 'low', 'dry', 'superficial']
+[CLS] shallow is the opposite of [MASK] . [SEP] → ['deep', 'shallow', 'depth', 'profound', 'hard']
+
+[CLS] demand is the opposite of [MASK] . [SEP] → ['supply', 'production', 'demand', 'consumption', 'output']
+[CLS] supply is the opposite of [MASK] . [SEP] → ['demand', 'production', 'consumption', 'supply', 'cost']
+
+[CLS] down is the opposite of [MASK] . [SEP] → ['up', 'down', 'over', 'right', 'above']
+[CLS] up is the opposite of [MASK] . [SEP] → ['down', 'up', 'downward', 'out', 'below']
+
+[CLS] dry is the opposite of [MASK] . [SEP] → ['wet', 'dry', 'moist', 'damp', 'humid']
+[CLS] wet is the opposite of [MASK] . [SEP] → ['dry', 'wet', 'cold', 'moist', 'dirty']
+
+[CLS] early is the opposite of [MASK] . [SEP] → ['late', 'later', 'early', 'old', 'morning']
+[CLS] late is the opposite of [MASK] . [SEP] → ['late', 'early', 'old', 'mid', 'earlier']
+
+[CLS] east is the opposite of [MASK] . [SEP] → ['west', 'south', 'north', 'east', 'northeast']
+[CLS] west is the opposite of [MASK] . [SEP] → ['east', 'south', 'north', 'west', 'southwest']
+
+[CLS] empty is the opposite of [MASK] . [SEP] → ['empty', 'full', 'void', 'infinite', 'complete']
+[CLS] full is the opposite of [MASK] . [SEP] → ['full', 'empty', 'dry', 'fat', 'small']
+
+[CLS] export is the opposite of [MASK] . [SEP] → ['import', 'export', 'investment', 'production', 'trade']
+[CLS] import is the opposite of [MASK] . [SEP] → ['export', 'import', 'trade', 'exports', 'substitution']
+
+[CLS] exterior is the opposite of [MASK] . [SEP] → ['interior', 'internal', 'inside', 'inner', 'exterior']
+[CLS] interior is the opposite of [MASK] . [SEP] → ['exterior', 'outer', 'external', 'outside', 'interior']
+
+[CLS] external is the opposite of [MASK] . [SEP] → ['internal', 'external', 'inward', 'interior', 'internally']
+[CLS] internal is the opposite of [MASK] . [SEP] → ['external', 'internal', 'exterior', 'physical', 'outer']
+
+[CLS] false is the opposite of [MASK] . [SEP] → ['true', 'false', 'truth', 'correct', 'real']
+[CLS] true is the opposite of [MASK] . [SEP] → ['false', 'true', 'wrong', 'truth', 'negative']
+
+[CLS] few is the opposite of [MASK] . [SEP] → ['many', 'few', 'most', 'all', 'much']
+[CLS] many is the opposite of [MASK] . [SEP] → ['many', 'few', 'one', 'all', 'much']
+
+[CLS] forget is the opposite of [MASK] . [SEP] → ['forget', 'remember', 'forgetting', 'love', 'living']
+[CLS] remember is the opposite of [MASK] . [SEP] → ['remember', 'forget', 'know', 'do', 'think']
+
+[CLS] future is the opposite of [MASK] . [SEP] → ['past', 'present', 'current', 'future', 'yesterday']
+[CLS] past is the opposite of [MASK] . [SEP] → ['future', 'present', 'past', 'current', 'time']
+
+[CLS] guilty is the opposite of [MASK] . [SEP] → ['guilty', 'innocent', 'true', 'good', 'right']
+[CLS] innocent is the opposite of [MASK] . [SEP] → ['guilty', 'evil', 'cruel', 'innocent', 'true']
+
+[CLS] hate is the opposite of [MASK] . [SEP] → ['love', 'hate', 'fear', 'happiness', 'good']
+[CLS] love is the opposite of [MASK] . [SEP] → ['hate', 'death', 'love', 'evil', 'life']
+
+[CLS] heaven is the opposite of [MASK] . [SEP] → ['hell', 'earth', 'heaven', 'Earth', 'reality']
+[CLS] hell is the opposite of [MASK] . [SEP] → ['heaven', 'hell', 'that', 'good', 'it']
+
+[CLS] high is the opposite of [MASK] . [SEP] → ['low', 'high', 'poor', 'lower', 'down']
+[CLS] low is the opposite of [MASK] . [SEP] → ['high', 'low', 'higher', 'above', 'good']
+
+[CLS] horizontal is the opposite of [MASK] . [SEP] → ['vertical', 'diagonal', 'horizontal', 'vertically', 'parallel']
+[CLS] vertical is the opposite of [MASK] . [SEP] → ['horizontal', 'vertical', 'diagonal', 'perpendicular', 'oblique']
+
+[CLS] in is the opposite of [MASK] . [SEP] → ['in', 'out', 'en', 'the', 'and']
+[CLS] out is the opposite of [MASK] . [SEP] → ['in', 'down', 'out', 'on', 'into']
+
+[CLS] inferior is the opposite of [MASK] . [SEP] → ['superior', 'inferior', 'masculine', 'perfect', 'greater']
+[CLS] superior is the opposite of [MASK] . [SEP] → ['inferior', 'superior', 'opposite', 'lower', 'subordinate']
+
+[CLS] inner is the opposite of [MASK] . [SEP] → ['outer', 'external', 'inner', 'internal', 'exterior']
+[CLS] outer is the opposite of [MASK] . [SEP] → ['inner', 'outer', 'internal', 'physical', 'the']
+
+[CLS] inside is the opposite of [MASK] . [SEP] → ['outside', 'out', 'inside', 'outer', 'in']
+[CLS] outside is the opposite of [MASK] . [SEP] → ['inside', 'within', 'in', 'outside', 'it']
+
+[CLS] junior is the opposite of [MASK] . [SEP] → ['senior', 'elder', 'junior', 'older', 'seniors']
+[CLS] senior is the opposite of [MASK] . [SEP] → ['junior', 'senior', 'younger', 'young', 'second']
+
+[CLS] long is the opposite of [MASK] . [SEP] → ['short', 'long', 'shorter', 'thin', 'small']
+[CLS] short is the opposite of [MASK] . [SEP] → ['long', 'short', 'length', 'large', 'tall']
+
+[CLS] love is the opposite of [MASK] . [SEP] → ['hate', 'death', 'love', 'evil', 'life']
+[CLS] hate is the opposite of [MASK] . [SEP] → ['love', 'hate', 'fear', 'happiness', 'good']
+
+[CLS] low is the opposite of [MASK] . [SEP] → ['high', 'low', 'higher', 'above', 'good']
+[CLS] high is the opposite of [MASK] . [SEP] → ['low', 'high', 'poor', 'lower', 'down']
+
+[CLS] major is the opposite of [MASK] . [SEP] → ['minor', 'major', 'small', 'zero', 'weak']
+[CLS] minor is the opposite of [MASK] . [SEP] → ['major', 'minor', 'degree', 'cardinal', 'superior']
+
+[CLS] minority is the opposite of [MASK] . [SEP] → ['majority', 'minority', 'minorities', 'diversity', 'dominant']
+[CLS] majority is the opposite of [MASK] . [SEP] → ['minority', 'majority', 'opposition', 'minorities', 'none']
+
+[CLS] more is the opposite of [MASK] . [SEP] → ['less', 'more', 'one', 'fewer', 'much']
+[CLS] less is the opposite of [MASK] . [SEP] → ['more', 'greater', 'less', 'one', 'many']
+
+[CLS] never is the opposite of [MASK] . [SEP] → ['never', 'always', 'ever', 'no', 'true']
+[CLS] always is the opposite of [MASK] . [SEP] → ['always', 'never', 'true', 'nothing', 'no']
+
+[CLS] night is the opposite of [MASK] . [SEP] → ['day', 'night', 'daylight', 'dawn', 'morning']
+[CLS] day is the opposite of [MASK] . [SEP] → ['night', 'day', 'time', 'hour', 'evening']
+
+[CLS] no is the opposite of [MASK] . [SEP] → ['no', 'yes', 'a', 'it', 'all']
+[CLS] yes is the opposite of [MASK] . [SEP] → ['no', 'yes', 'nothing', 'that', 'negative']
+
+[CLS] north is the opposite of [MASK] . [SEP] → ['south', 'west', 'east', 'southwest', 'north']
+[CLS] south is the opposite of [MASK] . [SEP] → ['north', 'east', 'west', 'south', 'southwest']
+
+[CLS] out is the opposite of [MASK] . [SEP] → ['in', 'down', 'out', 'on', 'into']
+[CLS] in is the opposite of [MASK] . [SEP] → ['in', 'out', 'en', 'the', 'and']
+
+[CLS] outer is the opposite of [MASK] . [SEP] → ['inner', 'outer', 'internal', 'physical', 'the']
+[CLS] inner is the opposite of [MASK] . [SEP] → ['outer', 'external', 'inner', 'internal', 'exterior']
+
+[CLS] outside is the opposite of [MASK] . [SEP] → ['inside', 'within', 'in', 'outside', 'it']
+[CLS] inside is the opposite of [MASK] . [SEP] → ['outside', 'out', 'inside', 'outer', 'in']
+
+[CLS] over is the opposite of [MASK] . [SEP] → ['over', 'under', 'in', 'by', 'to']
+[CLS] under is the opposite of [MASK] . [SEP] → ['over', 'under', 'with', 'above', 'in']
+
+[CLS] peace is the opposite of [MASK] . [SEP] → ['war', 'death', 'peace', 'violence', 'fear']
+[CLS] war is the opposite of [MASK] . [SEP] → ['peace', 'love', 'war', 'life', 'happiness']
+
+[CLS] permanent is the opposite of [MASK] . [SEP] → ['permanent', 'temporary', 'static', 'constant', 'perpetual']
+[CLS] temporary is the opposite of [MASK] . [SEP] → ['permanent', 'temporary', 'continuous', 'constant', 'time']
+
+[CLS] plural is the opposite of [MASK] . [SEP] → ['singular', 'plural', 'number', 'noun', 'dual']
+[CLS] singular is the opposite of [MASK] . [SEP] → ['plural', 'singular', 'dual', 'universal', 'absolute']
+
+[CLS] possible is the opposite of [MASK] . [SEP] → ['impossible', 'possible', 'true', 'probable', 'real']
+[CLS] impossible is the opposite of [MASK] . [SEP] → ['impossible', 'possible', 'perfect', 'true', 'difficult']
+
+[CLS] presence is the opposite of [MASK] . [SEP] → ['absence', 'presence', 'existence', 'death', 'being']
+[CLS] absence is the opposite of [MASK] . [SEP] → ['absence', 'presence', 'existence', 'inclusion', 'death']
+
+[CLS] private is the opposite of [MASK] . [SEP] → ['public', 'private', 'personal', 'open', 'government']
+[CLS] public is the opposite of [MASK] . [SEP] → ['private', 'public', 'personal', 'social', 'state']
+
+[CLS] solid is the opposite of [MASK] . [SEP] → ['solid', 'liquid', 'hollow', 'void', 'fluid']
+[CLS] liquid is the opposite of [MASK] . [SEP] → ['liquid', 'solid', 'water', 'gas', 'fluid']
+
+[CLS] success is the opposite of [MASK] . [SEP] → ['failure', 'loss', 'defeat', 'success', 'failures']
+[CLS] failure is the opposite of [MASK] . [SEP] → ['success', 'failure', 'progress', 'happiness', 'perfection']
+
+[CLS] them is the opposite of [MASK] . [SEP] → ['them', 'us', 'it', 'me', 'that']
+[CLS] us is the opposite of [MASK] . [SEP] → ['us', 'them', 'you', 'that', 'it']
+
+[CLS] under is the opposite of [MASK] . [SEP] → ['over', 'under', 'with', 'above', 'in']
+[CLS] over is the opposite of [MASK] . [SEP] → ['over', 'under', 'in', 'by', 'to']
+
+[CLS] useful is the opposite of [MASK] . [SEP] → ['useful', 'useless', 'valuable', 'productive', 'harmful']
+[CLS] useless is the opposite of [MASK] . [SEP] → ['useless', 'useful', 'good', 'productive', 'valuable']
+
+[CLS] victory is the opposite of [MASK] . [SEP] → ['defeat', 'loss', 'failure', 'victory', 'death']
+[CLS] defeat is the opposite of [MASK] . [SEP] → ['victory', 'defeat', 'success', 'winning', 'win']
+
+[CLS] visible is the opposite of [MASK] . [SEP] → ['invisible', 'visible', 'apparent', 'hidden', 'unseen']
+[CLS] invisible is the opposite of [MASK] . [SEP] → ['invisible', 'visible', 'transparent', 'beautiful', 'real']
+
+[CLS] vowel is the opposite of [MASK] . [SEP] → ['consonant', 'vowel', 'syllable', 'tone', 'sound']
+[CLS] consonant is the opposite of [MASK] . [SEP] → ['vowel', 'consonant', 'sound', 'syllable', 'tone']
+
+[CLS] to agree is the opposite of to [MASK] . [SEP] → ['disagree', 'agree', 'reject', 'dislike', 'decline']
+[CLS] to disagree is the opposite of to [MASK] . [SEP] → ['agree', 'disagree', 'accept', 'approve', 'cooperate']
+
+[CLS] to attack is the opposite of to [MASK] . [SEP] → ['defend', 'retreat', 'protect', 'kill', 'flee']
+[CLS] to defend is the opposite of to [MASK] . [SEP] → ['attack', 'kill', 'defend', 'protect', 'destroy']
+
+[CLS] to begin is the opposite of to [MASK] . [SEP] → ['end', 'finish', 'stop', 'conclude', 'begin']
+[CLS] to end is the opposite of to [MASK] . [SEP] → ['begin', 'end', 'start', 'do', 'be']
+
+[CLS] to buy is the opposite of to [MASK] . [SEP] → ['sell', 'buy', 'give', 'consume', 'take']
+[CLS] to sell is the opposite of to [MASK] . [SEP] → ['buy', 'purchase', 'sell', 'receive', 'give']
+
+[CLS] to close is the opposite of to [MASK] . [SEP] → ['open', 'close', 'enter', 'hold', 'move']
+[CLS] to open is the opposite of to [MASK] . [SEP] → ['close', 'shut', 'closed', 'open', 'hold']
+
+[CLS] to cry is the opposite of to [MASK] . [SEP] → ['laugh', 'cry', 'talk', 'speak', 'die']
+[CLS] to laugh is the opposite of to [MASK] . [SEP] → ['cry', 'die', 'hate', 'fear', 'kill']
+
+[CLS] to decrease is the opposite of to [MASK] . [SEP] → ['increase', 'advance', 'decrease', 'gain', 'add']
+[CLS] to increase is the opposite of to [MASK] . [SEP] → ['decrease', 'reduce', 'decline', 'lose', 'lower']
+
+[CLS] to fail is the opposite of to [MASK] . [SEP] → ['succeed', 'win', 'fail', 'pass', 'do']
+[CLS] to succeed is the opposite of to [MASK] . [SEP] → ['fail', 'lose', 'die', 'decline', 'fall']
+
+[CLS] to include is the opposite of to [MASK] . [SEP] → ['exclude', 'include', 'contain', 'remove', 'have']
+[CLS] to exclude is the opposite of to [MASK] . [SEP] → ['exclude', 'include', 'add', 'admit', 'accept']
+
+[CLS] to laugh is the opposite of to [MASK] . [SEP] → ['cry', 'die', 'hate', 'fear', 'kill']
+[CLS] to cry is the opposite of to [MASK] . [SEP] → ['laugh', 'cry', 'talk', 'speak', 'die']
+
+[CLS] to live is the opposite of to [MASK] . [SEP] → ['die', 'kill', 'live', 'be', 'death']
+[CLS] to die is the opposite of to [MASK] . [SEP] → ['live', 'die', 'be', 'love', 'exist']
+
+[CLS] to push is the opposite of to [MASK] . [SEP] → ['pull', 'push', 'hold', 'throw', 'take']
+[CLS] to pull is the opposite of to [MASK] . [SEP] → ['push', 'pull', 'hold', 'throw', 'press']
+
+
+symmetric_incorrect 9
+[CLS] child is the opposite of [MASK] . [SEP] → ['parent', 'child', 'mother', 'adult', 'father']
+[CLS] parent is the opposite of [MASK] . [SEP] → ['child', 'parent', 'offspring', 'father', 'children']
+
+[CLS] thin is the opposite of [MASK] . [SEP] → ['thick', 'thin', 'long', 'fat', 'strong']
+[CLS] thick is the opposite of [MASK] . [SEP] → ['thin', 'thick', 'slender', 'short', 'fat']
+
+[CLS] first is the opposite of [MASK] . [SEP] → ['second', 'last', 'third', 'first', 'another']
+[CLS] second is the opposite of [MASK] . [SEP] → ['first', 'third', 'second', 'one', 'last']
+
+[CLS] host is the opposite of [MASK] . [SEP] → ['parasite', 'host', 'animal', 'object', 'other']
+[CLS] parasite is the opposite of [MASK] . [SEP] → ['parasite', 'host', 'animal', 'predator', 'victim']
+
+[CLS] patient is the opposite of [MASK] . [SEP] → ['patient', 'therapist', 'master', 'agent', 'doctor']
+[CLS] therapist is the opposite of [MASK] . [SEP] → ['therapist', 'patient', 'teacher', 'psychologist', 'client']
+
+[CLS] real is the opposite of [MASK] . [SEP] → ['real', 'imaginary', 'zero', 'false', 'negative']
+[CLS] imaginary is the opposite of [MASK] . [SEP] → ['real', 'zero', 'imaginary', 'constant', 'complex']
+
+[CLS] truth is the opposite of [MASK] . [SEP] → ['truth', 'reality', 'knowledge', 'ignorance', 'it']
+[CLS] reality is the opposite of [MASK] . [SEP] → ['reality', 'truth', 'fiction', 'perception', 'illusion']
+
+[CLS] freedom is the opposite of [MASK] . [SEP] → ['freedom', 'power', 'death', 'slavery', 'liberty']
+[CLS] power is the opposite of [MASK] . [SEP] → ['power', 'freedom', 'wealth', 'knowledge', 'beauty']
+
+[CLS] to lower is the opposite of to [MASK] . [SEP] → ['higher', 'upper', 'lower', 'above', 'high']
+[CLS] to higher is the opposite of to [MASK] . [SEP] → ['lower', 'less', 'below', 'low', 'inferior']
+
+
+
+asymmetric_correct 28
+[CLS] scarce is the opposite of [MASK] . [SEP] → ['scarce', 'abundant', 'valuable', 'rare', 'rich']
+[CLS] abundant is the opposite of [MASK] . [SEP] → ['abundant', 'poor', 'rare', 'scarce', 'rich']
+
+[CLS] against is the opposite of [MASK] . [SEP] → ['for', 'against', 'with', 'to', 'in']
+[CLS] for is the opposite of [MASK] . [SEP] → ['for', 'and', 'the', 'if', 'where']
+
+[CLS] alone is the opposite of [MASK] . [SEP] → ['together', 'alone', 'all', 'both', 'self']
+[CLS] together is the opposite of [MASK] . [SEP] → ['two', 'one', 'alone', 'apart', 'opposite']
+
+[CLS] ancient is the opposite of [MASK] . [SEP] → ['modern', 'ancient', 'old', 'young', 'new']
+[CLS] modern is the opposite of [MASK] . [SEP] → ['traditional', 'ancient', 'old', 'classical', 'modern']
+
+[CLS] awake is the opposite of [MASK] . [SEP] → ['asleep', 'sleep', 'sleeping', 'awake', 'dead']
+[CLS] asleep is the opposite of [MASK] . [SEP] → ['waking', 'sleeping', 'sleep', 'asleep', 'awake']
+
+[CLS] incorrect is the opposite of [MASK] . [SEP] → ['correct', 'right', 'true', 'incorrect', 'wrong']
+[CLS] correct is the opposite of [MASK] . [SEP] → ['correct', 'wrong', 'incorrect', 'right', 'false']
+
+[CLS] safety is the opposite of [MASK] . [SEP] → ['danger', 'health', 'pain', 'happiness', 'risk']
+[CLS] danger is the opposite of [MASK] . [SEP] → ['danger', 'good', 'safety', 'fun', 'happiness']
+
+[CLS] disease is the opposite of [MASK] . [SEP] → ['disease', 'health', 'life', 'happiness', 'death']
+[CLS] health is the opposite of [MASK] . [SEP] → ['health', 'happiness', 'disease', 'sickness', 'fitness']
+
+[CLS] entrance is the opposite of [MASK] . [SEP] → ['exit', 'departure', 'closing', 'destination', 'death']
+[CLS] exit is the opposite of [MASK] . [SEP] → ['entry', 'entering', 'entrance', 'in', 'exit']
+
+[CLS] against is the opposite of [MASK] . [SEP] → ['for', 'against', 'with', 'to', 'in']
+[CLS] for is the opposite of [MASK] . [SEP] → ['for', 'and', 'the', 'if', 'where']
+
+[CLS] sad is the opposite of [MASK] . [SEP] → ['happy', 'good', 'sad', 'bad', 'happiness']
+[CLS] happy is the opposite of [MASK] . [SEP] → ['bad', 'sad', 'happy', 'evil', 'unhappy']
+
+[CLS] accidental is the opposite of [MASK] . [SEP] → ['intentional', 'accidental', 'natural', 'deliberate', 'effective']
+[CLS] intentional is the opposite of [MASK] . [SEP] → ['intentional', 'natural', 'voluntary', 'accidental', 'deliberate']
+
+[CLS] injustice is the opposite of [MASK] . [SEP] → ['justice', 'injustice', 'good', 'right', 'morality']
+[CLS] justice is the opposite of [MASK] . [SEP] → ['truth', 'justice', 'evil', 'morality', 'sin']
+
+[CLS] landlord is the opposite of [MASK] . [SEP] → ['landlord', 'tenant', 'owner', 'master', 'employer']
+[CLS] tenant is the opposite of [MASK] . [SEP] → ['tenant', 'owner', 'landlord', 'employee', 'worker']
+
+[CLS] follower is the opposite of [MASK] . [SEP] → ['follower', 'leader', 'defender', 'subordinate', 'participant']
+[CLS] leader is the opposite of [MASK] . [SEP] → ['subordinate', 'follower', 'leader', 'antagonist', 'loser']
+
+[CLS] tight is the opposite of [MASK] . [SEP] → ['tight', 'loose', 'thin', 'soft', 'open']
+[CLS] loose is the opposite of [MASK] . [SEP] → ['loose', 'hard', 'tight', 'secure', 'free']
+
+[CLS] loud is the opposite of [MASK] . [SEP] → ['quiet', 'loud', 'silent', 'good', 'beautiful']
+[CLS] quiet is the opposite of [MASK] . [SEP] → ['quiet', 'silent', 'loud', 'sound', 'silence']
+
+[CLS] minimum is the opposite of [MASK] . [SEP] → ['maximum', 'minimum', 'zero', 'most', 'sum']
+[CLS] maximum is the opposite of [MASK] . [SEP] → ['zero', 'minimum', 'negative', 'least', 'one']
+
+[CLS] little is the opposite of [MASK] . [SEP] → ['much', 'big', 'nothing', 'great', 'little']
+[CLS] much is the opposite of [MASK] . [SEP] → ['much', 'nothing', 'little', 'all', 'less']
+
+[CLS] off is the opposite of [MASK] . [SEP] → ['on', 'off', 'down', 'in', 'up']
+[CLS] on is the opposite of [MASK] . [SEP] → ['on', 'to', 'in', 'off', 'from']
+
+[CLS] chaos is the opposite of [MASK] . [SEP] → ['order', 'chaos', 'equilibrium', 'progress', 'goodness']
+[CLS] order is the opposite of [MASK] . [SEP] → ['order', 'equality', 'chaos', 'freedom', 'ordering']
+
+[CLS] wealth is the opposite of [MASK] . [SEP] → ['poverty', 'power', 'wealth', 'happiness', 'value']
+[CLS] poverty is the opposite of [MASK] . [SEP] → ['happiness', 'poverty', 'wealth', 'prosperity', 'success']
+
+[CLS] wealth is the opposite of [MASK] . [SEP] → ['poverty', 'power', 'wealth', 'happiness', 'value']
+[CLS] poverty is the opposite of [MASK] . [SEP] → ['happiness', 'poverty', 'wealth', 'prosperity', 'success']
+
+[CLS] drunk is the opposite of [MASK] . [SEP] → ['sober', 'drunk', 'good', 'happy', 'tired']
+[CLS] sober is the opposite of [MASK] . [SEP] → ['sober', 'happy', 'alcoholic', 'hot', 'drunk']
+
+[CLS] experience is the opposite of [MASK] . [SEP] → ['experience', 'knowledge', 'reality', 'perception', 'action']
+[CLS] knowledge is the opposite of [MASK] . [SEP] → ['knowledge', 'power', 'experience', 'ignorance', 'truth']
+
+[CLS] to disappear is the opposite of to [MASK] . [SEP] → ['appear', 'die', 'live', 'be', 'come']
+[CLS] to appear is the opposite of to [MASK] . [SEP] → ['be', 'disappear', 'appear', 'become', 'die']
+
+[CLS] to lead is the opposite of to [MASK] . [SEP] → ['follow', 'take', 'stop', 'stay', 'leave']
+[CLS] to follow is the opposite of to [MASK] . [SEP] → ['follow', 'be', 'go', 'oppose', 'do']
+
+[CLS] to catch is the opposite of to [MASK] . [SEP] → ['throw', 'catch', 'lose', 'shoot', 'kill']
+[CLS] to throw is the opposite of to [MASK] . [SEP] → ['throw', 'shoot', 'hit', 'catch', 'take']
+
+
+
+asymmetric_incorrect 43
+[CLS] abundant is the opposite of [MASK] . [SEP] → ['abundant', 'poor', 'rare', 'scarce', 'rich']
+[CLS] poor is the opposite of [MASK] . [SEP] → ['rich', 'good', 'poor', 'wealthy', 'great']
+
+[CLS] arrogant is the opposite of [MASK] . [SEP] → ['arrogant', 'polite', 'lazy', 'humble', 'rude']
+[CLS] polite is the opposite of [MASK] . [SEP] → ['polite', 'rude', 'formal', 'correct', 'proper']
+
+[CLS] humble is the opposite of [MASK] . [SEP] → ['humble', 'noble', 'rude', 'rich', 'beautiful']
+[CLS] noble is the opposite of [MASK] . [SEP] → ['noble', 'evil', 'poor', 'good', 'rich']
+
+[CLS] cheap is the opposite of [MASK] . [SEP] → ['cheap', 'good', 'expensive', 'rich', 'bad']
+[CLS] good is the opposite of [MASK] . [SEP] → ['bad', 'evil', 'good', 'ill', 'terrible']
+
+[CLS] expensive is the opposite of [MASK] . [SEP] → ['expensive', 'good', 'cheap', 'costly', 'common']
+[CLS] good is the opposite of [MASK] . [SEP] → ['bad', 'evil', 'good', 'ill', 'terrible']
+
+[CLS] correct is the opposite of [MASK] . [SEP] → ['correct', 'wrong', 'incorrect', 'right', 'false']
+[CLS] wrong is the opposite of [MASK] . [SEP] → ['right', 'good', 'wrong', 'correct', 'true']
+
+[CLS] cruel is the opposite of [MASK] . [SEP] → ['good', 'cruel', 'evil', 'kind', 'fair']
+[CLS] good is the opposite of [MASK] . [SEP] → ['bad', 'evil', 'good', 'ill', 'terrible']
+
+[CLS] kind is the opposite of [MASK] . [SEP] → ['kind', 'good', 'evil', 'bad', 'cruel']
+[CLS] good is the opposite of [MASK] . [SEP] → ['bad', 'evil', 'good', 'ill', 'terrible']
+
+[CLS] danger is the opposite of [MASK] . [SEP] → ['danger', 'good', 'safety', 'fun', 'happiness']
+[CLS] good is the opposite of [MASK] . [SEP] → ['bad', 'evil', 'good', 'ill', 'terrible']
+
+[CLS] fat is the opposite of [MASK] . [SEP] → ['fat', 'weight', 'meat', 'protein', 'size']
+[CLS] weight is the opposite of [MASK] . [SEP] → ['weight', 'mass', 'size', 'energy', 'height']
+
+[CLS] for is the opposite of [MASK] . [SEP] → ['for', 'and', 'the', 'if', 'where']
+[CLS] and is the opposite of [MASK] . [SEP] → ['and', 'the', ':', ',', 'or']
+
+[CLS] fortunate is the opposite of [MASK] . [SEP] → ['fortunate', 'bad', 'good', 'poor', 'lucky']
+[CLS] bad is the opposite of [MASK] . [SEP] → ['good', 'bad', 'right', 'evil', 'nice']
+
+[CLS] unfortunate is the opposite of [MASK] . [SEP] → ['good', 'fortunate', 'healthy', 'happy', 'unfortunate']
+[CLS] good is the opposite of [MASK] . [SEP] → ['bad', 'evil', 'good', 'ill', 'terrible']
+
+[CLS] guest is the opposite of [MASK] . [SEP] → ['guest', 'owner', 'host', 'partner', 'employee']
+[CLS] owner is the opposite of [MASK] . [SEP] → ['owner', 'user', 'consumer', 'property', 'employee']
+
+[CLS] happy is the opposite of [MASK] . [SEP] → ['bad', 'sad', 'happy', 'evil', 'unhappy']
+[CLS] bad is the opposite of [MASK] . [SEP] → ['good', 'bad', 'right', 'evil', 'nice']
+
+[CLS] harmful is the opposite of [MASK] . [SEP] → ['good', 'harmful', 'beneficial', 'useful', 'healthy']
+[CLS] good is the opposite of [MASK] . [SEP] → ['bad', 'evil', 'good', 'ill', 'terrible']
+
+[CLS] harmless is the opposite of [MASK] . [SEP] → ['harmless', 'dangerous', 'deadly', 'harmful', 'lethal']
+[CLS] dangerous is the opposite of [MASK] . [SEP] → ['good', 'dangerous', 'safe', 'beautiful', 'fun']
+
+[CLS] here is the opposite of [MASK] . [SEP] → ['that', 'it', 'this', 'them', 'there']
+[CLS] that is the opposite of [MASK] . [SEP] → ['it', 'evil', 'that', 'this', 'truth']
+
+[CLS] there is the opposite of [MASK] . [SEP] → ['it', 'that', 'this', 'truth', 'them']
+[CLS] it is the opposite of [MASK] . [SEP] → ['reality', 'it', 'evil', 'truth', 'love']
+
+[CLS] hopeful is the opposite of [MASK] . [SEP] → ['sad', 'bad', 'boring', 'negative', 'happy']
+[CLS] sad is the opposite of [MASK] . [SEP] → ['happy', 'good', 'sad', 'bad', 'happiness']
+
+[CLS] hopeless is the opposite of [MASK] . [SEP] → ['good', 'hopeless', 'perfect', 'happy', 'great']
+[CLS] good is the opposite of [MASK] . [SEP] → ['bad', 'evil', 'good', 'ill', 'terrible']
+
+[CLS] intentional is the opposite of [MASK] . [SEP] → ['intentional', 'natural', 'voluntary', 'accidental', 'deliberate']
+[CLS] natural is the opposite of [MASK] . [SEP] → ['natural', 'artificial', 'unnatural', 'synthetic', 'supernatural']
+
+[CLS] justice is the opposite of [MASK] . [SEP] → ['truth', 'justice', 'evil', 'morality', 'sin']
+[CLS] truth is the opposite of [MASK] . [SEP] → ['truth', 'reality', 'knowledge', 'ignorance', 'it']
+
+[CLS] leader is the opposite of [MASK] . [SEP] → ['subordinate', 'follower', 'leader', 'antagonist', 'loser']
+[CLS] subordinate is the opposite of [MASK] . [SEP] → ['subordinate', 'superior', 'inferior', 'master', 'equal']
+
+[CLS] likely is the opposite of [MASK] . [SEP] → ['true', 'chance', 'possible', 'it', 'good']
+[CLS] true is the opposite of [MASK] . [SEP] → ['false', 'true', 'wrong', 'truth', 'negative']
+
+[CLS] unlikely is the opposite of [MASK] . [SEP] → ['unlikely', 'probable', 'likely', 'impossible', 'possible']
+[CLS] probable is the opposite of [MASK] . [SEP] → ['probable', 'possible', 'certain', 'definite', 'true']
+
+[CLS] loose is the opposite of [MASK] . [SEP] → ['loose', 'hard', 'tight', 'secure', 'free']
+[CLS] hard is the opposite of [MASK] . [SEP] → ['soft', 'hard', 'easy', 'weak', 'good']
+
+[CLS] maximum is the opposite of [MASK] . [SEP] → ['zero', 'minimum', 'negative', 'least', 'one']
+[CLS] zero is the opposite of [MASK] . [SEP] → ['zero', 'one', 'unity', 'x', 'itself']
+
+[CLS] on is the opposite of [MASK] . [SEP] → ['on', 'to', 'in', 'off', 'from']
+[CLS] to is the opposite of [MASK] . [SEP] → ['to', 'from', 'in', 'a', 'and']
+
+[CLS] order is the opposite of [MASK] . [SEP] → ['order', 'equality', 'chaos', 'freedom', 'ordering']
+[CLS] equality is the opposite of [MASK] . [SEP] → ['equality', 'inequality', 'difference', 'discrimination', 'separation']
+
+[CLS] poverty is the opposite of [MASK] . [SEP] → ['happiness', 'poverty', 'wealth', 'prosperity', 'success']
+[CLS] happiness is the opposite of [MASK] . [SEP] → ['pain', 'sadness', 'sorrow', 'suffering', 'death']
+
+[CLS] sober is the opposite of [MASK] . [SEP] → ['sober', 'happy', 'alcoholic', 'hot', 'drunk']
+[CLS] happy is the opposite of [MASK] . [SEP] → ['bad', 'sad', 'happy', 'evil', 'unhappy']
+
+[CLS] virtue is the opposite of [MASK] . [SEP] → ['sin', 'virtue', 'evil', 'vice', 'morality']
+[CLS] sin is the opposite of [MASK] . [SEP] → ['sin', 'truth', 'faith', 'equality', 'it']
+
+[CLS] vice is the opposite of [MASK] . [SEP] → ['vice', 'sin', 'virtue', 'happiness', 'love']
+[CLS] sin is the opposite of [MASK] . [SEP] → ['sin', 'truth', 'faith', 'equality', 'it']
+
+[CLS] to appear is the opposite of to [MASK] . [SEP] → ['be', 'disappear', 'appear', 'become', 'die']
+[CLS] to be is the opposite of to [MASK] . [SEP] → ['be', 'have', 'do', 'not', 'become']
+
+[CLS] to borrow is the opposite of to [MASK] . [SEP] → ['sell', 'buy', 'give', 'borrow', 'lend']
+[CLS] to sell is the opposite of to [MASK] . [SEP] → ['buy', 'purchase', 'sell', 'receive', 'give']
+
+[CLS] to lend is the opposite of to [MASK] . [SEP] → ['take', 'borrow', 'give', 'sell', 'receive']
+[CLS] to take is the opposite of to [MASK] . [SEP] → ['give', 'take', 'receive', 'have', 'do']
+
+[CLS] to follow is the opposite of to [MASK] . [SEP] → ['follow', 'be', 'go', 'oppose', 'do']
+[CLS] to be is the opposite of to [MASK] . [SEP] → ['be', 'have', 'do', 'not', 'become']
+
+[CLS] to throw is the opposite of to [MASK] . [SEP] → ['throw', 'shoot', 'hit', 'catch', 'take']
+[CLS] to shoot is the opposite of to [MASK] . [SEP] → ['shoot', 'kill', 'throw', 'fight', 'run']

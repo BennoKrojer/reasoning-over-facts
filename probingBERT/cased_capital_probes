@@ -1,0 +1,210 @@
+symmetric_correct 59
+[CLS] Afghanistan's capital is [MASK] . [SEP] → ['Kabul', 'Tehran', 'Tirana', 'Taliban', 'Baghdad']
+[CLS] Kabul is the capital of [MASK] . [SEP] → ['Afghanistan', 'Kabul', 'Pakistan', 'Afghan', 'Asia']
+
+[CLS] Albania's capital is [MASK] . [SEP] → ['Tirana', 'Belgrade', 'Kabul', 'Tripoli', 'Albania']
+[CLS] Tirana is the capital of [MASK] . [SEP] → ['Albania', 'Kosovo', 'Tirana', 'Albanian', 'Georgia']
+
+[CLS] Algeria's capital is [MASK] . [SEP] → ['Algiers', 'Constantine', 'Algeria', 'Casablanca', 'Tripoli']
+[CLS] Algiers is the capital of [MASK] . [SEP] → ['Algeria', 'Algiers', 'Africa', 'Tunisia', 'France']
+
+[CLS] Armenia's capital is [MASK] . [SEP] → ['Yerevan', 'Van', 'Armenia', 'Lori', 'Baku']
+[CLS] Yerevan is the capital of [MASK] . [SEP] → ['Armenia', 'Georgia', 'Yerevan', 'Iran', 'Azerbaijan']
+
+[CLS] Australia's capital is [MASK] . [SEP] → ['Canberra', 'Melbourne', 'Sydney', 'Adelaide', 'Brisbane']
+[CLS] Canberra is the capital of [MASK] . [SEP] → ['Australia', 'Canberra', 'Victoria', 'ACT', 'Malaysia']
+
+[CLS] Austria's capital is [MASK] . [SEP] → ['Vienna', 'Salzburg', 'Wien', 'Bern', 'Prague']
+[CLS] Vienna is the capital of [MASK] . [SEP] → ['Austria', 'Vienna', 'Hungary', 'Germany', 'Europe']
+
+[CLS] Azerbaijan's capital is [MASK] . [SEP] → ['Baku', 'Yerevan', 'Tbilisi', 'Azerbaijan', 'Tehran']
+[CLS] Baku is the capital of [MASK] . [SEP] → ['Azerbaijan', 'Baku', 'Georgia', 'Azerbaijani', 'Kazakhstan']
+
+[CLS] Bangladesh's capital is [MASK] . [SEP] → ['Dhaka', 'Kolkata', 'Calcutta', 'Bangladesh', 'Baku']
+[CLS] Dhaka is the capital of [MASK] . [SEP] → ['Bangladesh', 'Dhaka', 'Bengal', 'Pakistan', 'Bangladeshi']
+
+[CLS] Belarus's capital is [MASK] . [SEP] → ['Minsk', 'Brest', 'Vilnius', 'Belarus', 'Belarusian']
+[CLS] Minsk is the capital of [MASK] . [SEP] → ['Belarus', 'Minsk', 'Latvia', 'Belarusian', 'Lithuania']
+
+[CLS] Belgium's capital is [MASK] . [SEP] → ['Brussels', 'Antwerp', 'Liège', 'Ghent', 'Luxembourg']
+[CLS] Brussels is the capital of [MASK] . [SEP] → ['Belgium', 'Flanders', 'Brussels', 'Luxembourg', 'Europe']
+
+[CLS] Bulgaria's capital is [MASK] . [SEP] → ['Sofia', 'Bulgaria', 'Belgrade', 'Boris', 'Petra']
+[CLS] Sofia is the capital of [MASK] . [SEP] → ['Bulgaria', 'Sofia', 'Macedonia', 'Bulgarian', 'Russia']
+
+[CLS] Chile's capital is [MASK] . [SEP] → ['Santiago', 'Chile', 'Sacramento', 'Mendoza', 'Melbourne']
+[CLS] Santiago is the capital of [MASK] . [SEP] → ['Chile', 'Santiago', 'Ecuador', 'Cuba', 'Paraguay']
+
+[CLS] China's capital is [MASK] . [SEP] → ['Beijing', 'Nanjing', 'Shanghai', 'Guangzhou', 'Taipei']
+[CLS] Beijing is the capital of [MASK] . [SEP] → ['China', 'Beijing', 'Asia', 'Chinese', 'Guangdong']
+
+[CLS] Colombia's capital is [MASK] . [SEP] → ['Bogotá', 'Pereira', 'Magdalena', 'Córdoba', 'Colombia']
+[CLS] Bogotá is the capital of [MASK] . [SEP] → ['Colombia', 'Bogotá', 'Colombian', 'Venezuela', 'Ecuador']
+
+[CLS] Croatia's capital is [MASK] . [SEP] → ['Zagreb', 'Split', 'Belgrade', 'Sarajevo', 'Ljubljana']
+[CLS] Zagreb is the capital of [MASK] . [SEP] → ['Croatia', 'Montenegro', 'Croatian', 'Yugoslavia', 'Serbia']
+
+[CLS] Cuba's capital is [MASK] . [SEP] → ['Havana', 'Santiago', 'Cuba', 'Bogotá', 'Ponce']
+[CLS] Havana is the capital of [MASK] . [SEP] → ['Cuba', 'Havana', 'Spain', 'Panama', 'Nicaragua']
+
+[CLS] Denmark's capital is [MASK] . [SEP] → ['Copenhagen', 'Oslo', 'Lund', 'Zealand', 'Denmark']
+[CLS] Copenhagen is the capital of [MASK] . [SEP] → ['Denmark', 'Greenland', 'Norway', 'Zealand', 'Europe']
+
+[CLS] Egypt's capital is [MASK] . [SEP] → ['Cairo', 'Alexandria', 'Egypt', 'Suez', 'Memphis']
+[CLS] Cairo is the capital of [MASK] . [SEP] → ['Egypt', 'Cairo', 'Sudan', 'Africa', 'Ethiopia']
+
+[CLS] Estonia's capital is [MASK] . [SEP] → ['Tallinn', 'Riga', 'Helsinki', 'Estonia', '[UNK]']
+[CLS] Tallinn is the capital of [MASK] . [SEP] → ['Estonia', 'Tallinn', 'Latvia', 'Finland', 'Estonian']
+
+[CLS] Finland's capital is [MASK] . [SEP] → ['Helsinki', 'Stockholm', 'Finland', 'Nokia', 'Oslo']
+[CLS] Helsinki is the capital of [MASK] . [SEP] → ['Finland', 'Helsinki', 'Georgia', 'Sweden', 'Estonia']
+
+[CLS] France's capital is [MASK] . [SEP] → ['Paris', 'Lyon', 'Strasbourg', 'Brest', 'Toulouse']
+[CLS] Paris is the capital of [MASK] . [SEP] → ['France', 'Europe', 'Paris', 'Normandy', 'Louisiana']
+
+[CLS] Georgia's capital is [MASK] . [SEP] → ['Tbilisi', 'Baku', 'Yerevan', 'Atlanta', 'Moscow']
+[CLS] Tbilisi is the capital of [MASK] . [SEP] → ['Georgia', 'Caucasus', 'Armenia', 'Tbilisi', 'Georgian']
+
+[CLS] Germany's capital is [MASK] . [SEP] → ['Berlin', 'Bonn', 'Frankfurt', 'Munich', 'Leipzig']
+[CLS] Berlin is the capital of [MASK] . [SEP] → ['Germany', 'Brandenburg', 'Prussia', 'Berlin', 'Europe']
+
+[CLS] Greece's capital is [MASK] . [SEP] → ['Athens', 'Thessaloniki', 'Rhodes', 'Olympia', 'Sparta']
+[CLS] Athens is the capital of [MASK] . [SEP] → ['Greece', 'Georgia', 'Macedonia', 'Athens', 'Europe']
+
+[CLS] Guyana's capital is [MASK] . [SEP] → ['Georgetown', 'Kingston', 'Hamilton', 'Guyana', 'Nassau']
+[CLS] Georgetown is the capital of [MASK] . [SEP] → ['Guyana', 'Guiana', 'Barbados', 'Georgetown', 'Venezuela']
+
+[CLS] Hungary's capital is [MASK] . [SEP] → ['Budapest', 'Bratislava', 'Vienna', 'Belgrade', 'Munich']
+[CLS] Budapest is the capital of [MASK] . [SEP] → ['Hungary', 'Budapest', 'Slovakia', 'Transylvania', 'Romania']
+
+[CLS] Indonesia's capital is [MASK] . [SEP] → ['Jakarta', 'Bali', 'Java', 'Solo', 'Indonesia']
+[CLS] Jakarta is the capital of [MASK] . [SEP] → ['Indonesia', 'Java', 'Jakarta', 'Sumatra', 'Indonesian']
+
+[CLS] Iran's capital is [MASK] . [SEP] → ['Tehran', 'Kerman', 'Rey', 'Baghdad', 'Kabul']
+[CLS] Tehran is the capital of [MASK] . [SEP] → ['Iran', 'Persia', 'Tehran', 'Afghanistan', 'Azerbaijan']
+
+[CLS] Iraq's capital is [MASK] . [SEP] → ['Baghdad', 'Saddam', 'Tehran', 'Iraq', 'Babylon']
+[CLS] Baghdad is the capital of [MASK] . [SEP] → ['Iraq', 'Baghdad', 'Iraqi', 'Afghanistan', 'Kurdistan']
+
+[CLS] Ireland's capital is [MASK] . [SEP] → ['Dublin', 'Limerick', 'Cork', 'Belfast', 'Galway']
+[CLS] Dublin is the capital of [MASK] . [SEP] → ['Ireland', 'Leinster', 'Dublin', 'Irish', 'Munster']
+
+[CLS] Israel's capital is [MASK] . [SEP] → ['Jerusalem', 'Haifa', 'Bethlehem', 'Gaza', 'David']
+[CLS] Jerusalem is the capital of [MASK] . [SEP] → ['Israel', 'Palestine', 'Jordan', 'Jerusalem', 'Lebanon']
+
+[CLS] Italy's capital is [MASK] . [SEP] → ['Rome', 'Milan', 'Florence', 'Turin', 'Bologna']
+[CLS] Rome is the capital of [MASK] . [SEP] → ['Italy', 'Rome', 'Sicily', 'Europe', 'France']
+
+[CLS] Jamaica's capital is [MASK] . [SEP] → ['Kingston', 'Hamilton', 'Jamaica', 'Manchester', 'Nassau']
+[CLS] Kingston is the capital of [MASK] . [SEP] → ['Jamaica', 'Kingston', 'Guyana', 'Haiti', 'Cameroon']
+
+[CLS] Japan's capital is [MASK] . [SEP] → ['Tokyo', 'Kyoto', 'Osaka', 'Hiroshima', 'Yokohama']
+[CLS] Tokyo is the capital of [MASK] . [SEP] → ['Japan', 'Tokyo', 'Asia', 'Nippon', 'Japanese']
+
+[CLS] Kenya's capital is [MASK] . [SEP] → ['Nairobi', 'Salisbury', 'Kenya', 'Georgetown', 'Mara']
+[CLS] Nairobi is the capital of [MASK] . [SEP] → ['Kenya', 'Somalia', 'Nairobi', 'Tanzania', 'Uganda']
+
+[CLS] Latvia's capital is [MASK] . [SEP] → ['Riga', '[UNK]', 'Tallinn', 'Vilnius', 'Latvia']
+[CLS] Riga is the capital of [MASK] . [SEP] → ['Latvia', 'Estonia', 'Latvian', 'Lithuania', 'Europe']
+
+[CLS] Lebanon's capital is [MASK] . [SEP] → ['Beirut', 'Tripoli', 'Lebanon', 'Damascus', 'Algiers']
+[CLS] Beirut is the capital of [MASK] . [SEP] → ['Lebanon', 'Beirut', 'Jordan', 'Syria', 'Lebanese']
+
+[CLS] Libya's capital is [MASK] . [SEP] → ['Tripoli', 'Sabha', 'Libyan', 'Libya', 'Petra']
+[CLS] Tripoli is the capital of [MASK] . [SEP] → ['Libya', 'Lebanon', 'Tripoli', 'Tunisia', 'Libyan']
+
+[CLS] Lithuania's capital is [MASK] . [SEP] → ['Vilnius', 'Riga', 'Lithuania', 'Lithuanian', 'Moscow']
+[CLS] Vilnius is the capital of [MASK] . [SEP] → ['Lithuania', 'Vilnius', 'Belarus', 'Latvia', 'Poland']
+
+[CLS] Netherlands's capital is [MASK] . [SEP] → ['Amsterdam', 'Rotterdam', 'Utrecht', 'Leiden', 'Hague']
+[CLS] Amsterdam is the capital of [MASK] . [SEP] → ['Netherlands', 'Holland', 'Amsterdam', 'Dutch', 'Utrecht']
+
+[CLS] Norway's capital is [MASK] . [SEP] → ['Oslo', 'Bergen', 'Stockholm', 'Copenhagen', 'Moss']
+[CLS] Oslo is the capital of [MASK] . [SEP] → ['Norway', 'Oslo', 'Norwegian', 'Scandinavia', 'Denmark']
+
+[CLS] Peru's capital is [MASK] . [SEP] → ['Lima', 'Toledo', 'Bogotá', 'Guadalajara', 'Peru']
+[CLS] Lima is the capital of [MASK] . [SEP] → ['Peru', 'Lima', 'Ecuador', 'Peruvian', 'Bolivia']
+
+[CLS] Philippines's capital is [MASK] . [SEP] → ['Manila', 'Cebu', 'Jakarta', 'Guadalajara', 'Laguna']
+[CLS] Manila is the capital of [MASK] . [SEP] → ['Philippines', 'Manila', 'Mindanao', 'Luzon', 'Philippine']
+
+[CLS] Poland's capital is [MASK] . [SEP] → ['Warsaw', 'Kraków', 'Poznań', 'Gdańsk', 'Łódź']
+[CLS] Warsaw is the capital of [MASK] . [SEP] → ['Poland', 'Belarus', 'Warsaw', 'Polish', 'Europe']
+
+[CLS] Portugal's capital is [MASK] . [SEP] → ['Lisbon', 'Porto', 'Salvador', 'Santiago', 'Wellington']
+[CLS] Lisbon is the capital of [MASK] . [SEP] → ['Portugal', 'Brazil', 'Lisbon', 'Mozambique', 'Portuguese']
+
+[CLS] Romania's capital is [MASK] . [SEP] → ['Bucharest', 'Budapest', 'Romania', 'Alexandria', 'Roman']
+[CLS] Bucharest is the capital of [MASK] . [SEP] → ['Romania', 'Transylvania', 'Moldova', 'Romanian', 'Bucharest']
+
+[CLS] Russia's capital is [MASK] . [SEP] → ['Moscow', 'Kazan', 'Vladimir', 'Leningrad', 'Kiev']
+[CLS] Moscow is the capital of [MASK] . [SEP] → ['Russia', 'Georgia', 'Moscow', 'Siberia', 'Belarus']
+
+[CLS] Serbia's capital is [MASK] . [SEP] → ['Belgrade', 'Sarajevo', 'Zagreb', 'Istanbul', 'Serbia']
+[CLS] Belgrade is the capital of [MASK] . [SEP] → ['Serbia', 'Montenegro', 'Yugoslavia', 'Kosovo', 'Belgrade']
+
+[CLS] Slovakia's capital is [MASK] . [SEP] → ['Bratislava', 'Prague', 'Martin', 'Budapest', 'Slovakia']
+[CLS] Bratislava is the capital of [MASK] . [SEP] → ['Slovakia', 'Czechoslovakia', 'Bratislava', 'Hungary', 'Slovak']
+
+[CLS] Slovenia's capital is [MASK] . [SEP] → ['Ljubljana', 'Zagreb', 'Sarajevo', 'Slovenia', 'Sofia']
+[CLS] Ljubljana is the capital of [MASK] . [SEP] → ['Slovenia', 'Slovenian', 'Ljubljana', 'Europe', 'Slovene']
+
+[CLS] Spain's capital is [MASK] . [SEP] → ['Madrid', 'Barcelona', 'Toledo', 'Córdoba', 'Valencia']
+[CLS] Madrid is the capital of [MASK] . [SEP] → ['Spain', 'Madrid', 'Mexico', 'España', 'Castile']
+
+[CLS] Sweden's capital is [MASK] . [SEP] → ['Stockholm', 'Gothenburg', 'Malmö', 'Lund', 'Oslo']
+[CLS] Stockholm is the capital of [MASK] . [SEP] → ['Sweden', 'Stockholm', 'Finland', 'Scandinavia', 'Europe']
+
+[CLS] Switzerland's capital is [MASK] . [SEP] → ['Bern', 'Zurich', 'Zürich', 'Geneva', 'Basel']
+[CLS] Bern is the capital of [MASK] . [SEP] → ['Switzerland', 'Bern', 'Swiss', 'Europe', 'canton']
+
+[CLS] Syria's capital is [MASK] . [SEP] → ['Damascus', 'Aleppo', 'Beirut', 'Alexandria', 'Tripoli']
+[CLS] Damascus is the capital of [MASK] . [SEP] → ['Syria', 'Lebanon', 'Damascus', 'Palestine', 'Levant']
+
+[CLS] Thailand's capital is [MASK] . [SEP] → ['Bangkok', 'Thailand', 'Dhaka', 'Saigon', 'Colombo']
+[CLS] Bangkok is the capital of [MASK] . [SEP] → ['Thailand', 'Bangkok', 'Myanmar', 'Asia', 'Thai']
+
+[CLS] Turkey's capital is [MASK] . [SEP] → ['Ankara', 'Istanbul', 'Constantinople', 'Van', 'Baku']
+[CLS] Ankara is the capital of [MASK] . [SEP] → ['Turkey', 'Anatolia', 'Ankara', 'Azerbaijan', 'Turkish']
+
+[CLS] Ukraine's capital is [MASK] . [SEP] → ['Kiev', 'Lviv', 'Odessa', 'Moscow', 'Ukraine']
+[CLS] Kiev is the capital of [MASK] . [SEP] → ['Ukraine', 'Kiev', 'Belarus', 'Crimea', 'Ukrainian']
+
+[CLS] Uruguay's capital is [MASK] . [SEP] → ['Montevideo', 'Rivera', 'Mendoza', 'Miranda', 'Minas']
+[CLS] Montevideo is the capital of [MASK] . [SEP] → ['Uruguay', 'Montevideo', 'Uruguayan', 'Paraguay', 'Argentina']
+
+[CLS] Venezuela's capital is [MASK] . [SEP] → ['Caracas', 'Valencia', 'Miranda', 'Lara', 'Vargas']
+[CLS] Caracas is the capital of [MASK] . [SEP] → ['Venezuela', 'Guyana', 'Caracas', 'Venezuelan', 'Miranda']
+
+
+
+symmetric_incorrect 0
+
+
+asymmetric_correct 1
+[CLS] Canada's capital is [MASK] . [SEP] → ['Ottawa', 'Toronto', 'Montreal', 'Halifax', 'Vancouver']
+[CLS] Ottawa is the capital of [MASK] . [SEP] → ['Ontario', 'Canada', 'Quebec', 'Ottawa', 'Illinois']
+
+
+
+asymmetric_incorrect 6
+[CLS] Luxembourg's capital is [MASK] . [SEP] → ['Luxembourg', 'Metz', 'Strasbourg', 'Brussels', 'Brest']
+[CLS] Metz is the capital of [MASK] . [SEP] → ['Lorraine', 'France', 'Metz', 'Normandy', 'Luxembourg']
+
+[CLS] Luxembourg is the capital of [MASK] . [SEP] → ['Luxembourg', 'Belgium', 'France', 'Europe', 'Germany']
+[CLS] Belgium's capital is [MASK] . [SEP] → ['Brussels', 'Antwerp', 'Liège', 'Ghent', 'Luxembourg']
+
+[CLS] Monaco's capital is [MASK] . [SEP] → ['Monaco', 'Paris', 'Brest', 'Victoria', 'Albert']
+[CLS] Paris is the capital of [MASK] . [SEP] → ['France', 'Europe', 'Paris', 'Normandy', 'Louisiana']
+
+[CLS] Monaco is the capital of [MASK] . [SEP] → ['Monaco', 'France', 'Europe', 'Belgium', 'Italy']
+[CLS] France's capital is [MASK] . [SEP] → ['Paris', 'Lyon', 'Strasbourg', 'Brest', 'Toulouse']
+
+[CLS] Singapore's capital is [MASK] . [SEP] → ['Singapore', '.', 'Victoria', 'Admiralty', 'London']
+[CLS] . is the capital of [MASK] . [SEP] → ['India', 'Armenia', 'Nepal', 'Indonesia', 'Ghana']
+
+[CLS] Singapore is the capital of [MASK] . [SEP] → ['Singapore', 'Asia', 'Malaysia', 'Oceania', 'Malaya']
+[CLS] Asia's capital is [MASK] . [SEP] → ['Tokyo', 'Beijing', 'Jakarta', 'Bangkok', 'Shanghai']
+
+
+
