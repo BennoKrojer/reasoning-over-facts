@@ -420,8 +420,6 @@ def main():
     parser.add_argument("--anti", action='store_true', help='Will look for jsons with correct objects for anti rules')
     parser.add_argument("--random", action='store_true', help='Will look for jsons with correct objects for random '
                                                               'facts')
-    parser.add_argument('--numb_correct_answers', type=int, default=1, help="number of correct answers of query 'subj "
-                                                                          "rel [MASK]'")
     parser.add_argument(
         "--mlm_probability", type=float, default=0.15, help="Ratio of tokens to mask for masked language modeling loss"
     )

@@ -21,8 +21,15 @@ We recommend running the following command in virtual environment:
 
     pip install -r requirements.txt
 
-### Usage
-To train the language model on an already existing dataset, you run `run_language_modeling.py` as follows:
+### Generating a dataset
+
+To create your own dataset, navigate to `scripts/RELATION`. Here you can specify parameters (number of entities, number relations...) in `datagen_config.py`, which currently contain default parameters. Then run the following to create the data, here exemplified for symmetry:
+python3 -m scripts.symmetry.generate_data --dataset_name MY_DATASET_NAME
+
+The dataset will be written to `data/symmetry/datasets/MY_DATASET_NAME`.
+
+### Training
+To train the language model on a dataset, you run `run_language_modeling.py` as follows:
     
     python3 -m scripts.run_language_modeling \
     --relation RELATION_NAME
@@ -31,11 +38,11 @@ To train the language model on an already existing dataset, you run `run_languag
     --random SET_TRUE_IF_DATA_SHOULD_BE_EVALUATED_ON_RANDOM_FACTS
     
 where
- - `relation` is usually chosen from the above list of covered rules, e.g. "symmetry"
+ - `relation` is usually chosen from the above list of covered rules, e.g. "symmetry"; but you can come up with your own names as well
  - `DATA_DIR` When creating a dataset, you will have to specify a name. This name is then needed here.
  
 Optional parameters:
-- `anti` tells the script to look for a json with the answers. Only include if the data has anti-rule relations.
+- `anti` tells the script to look for a json with the answers. Only include this if the data has anti-rule relations.
 - `random` tells the script to look for a json with the answers. Only include if the rule has relations with random facts.
 - `numb_correct_answers` indicates how many correct answers a given query of the form "subject relation [MASK] has. This influences our metric for evaluation accuracy.
 - `epochs`: number of epochs. Default is 2000
@@ -53,14 +60,6 @@ Here is an exmaple command for symmetry:
     --dataset_name StandardSym
     --anti
     --random
-
-### Generating a dataset
-
-You can find datasets for all above mentioned rules under `data/`. 
-To create your own dataset with different parameters, navigate to `scripts/RELATION` where you can specify parameters in `datagen_config.py`. Then run the following to create the data, here exemplified for symmetry:
-python3 -m scripts.symmetry.generate_data --dataset_name MY_DATASET_NAME
-
-The dataset will be written to `data/symmetry/datasets/MY_DATASET_NAME`.
 
 ### Probing BERT
 
