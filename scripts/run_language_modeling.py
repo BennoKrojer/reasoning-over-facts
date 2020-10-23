@@ -332,63 +332,17 @@ def evaluate(args, corrects, model: PreTrainedModel, tokenizer: PreTrainedTokeni
             for i, (prediction, sample) in enumerate(zip(prediction_scores, batch)):
 
                 key = " ".join(tokenizer.convert_ids_to_tokens(sample[0:masked_indices[i]]))
-                print(prediction)
-                print(key)
                 correct_objects = answers[key]
-                print(correct_objects)
                 numb_correct_answers = len(correct_objects)
-                print(numb_correct_answers)
                 predicted_ids = torch.argsort(prediction, dim=0, descending=True)[:numb_correct_answers]
-                print(predicted_ids)
                 ranked_predictions = tokenizer.convert_ids_to_tokens(predicted_ids)
-                print(ranked_predictions)
-                #predicted_strings = list(zip(*ranked_predictions))
-                #print(predicted_strings)
 
                 accurate += len(set(ranked_predictions) & set(correct_objects))/numb_correct_answers
                 print(accurate)
                 total += 1.0
 
-
-
-
-            """predicted_ids = torch.argsort(prediction_scores, dim=1, descending=True)[:, :args.numb_correct_answers]
-            ranked_predictions = []
-
-            for i in range(args.numb_correct_answers):
-                ranked_predictions.append(tokenizer.convert_ids_to_tokens(predicted_ids[:, i]))
-            predicted_strings = list(zip(*ranked_predictions))
-
-
-            for i, (predicted, sample) in enumerate(zip(predicted_strings, batch)):
-                key = " ".join(tokenizer.convert_ids_to_tokens(sample[1:masked_indices[i]]))
-                correct_objects = answers[key]
-                accurate += len(set(predicted[:args.numb_correct_answers]) & set(correct_objects))
-                total += len(correct_objects)"""
         return accurate / total
 
-    def compute_accuracy(query2answers, type):
-        print('Computing standard acc')
-        accurate = 0
-        total = 0
-        answers, batches = query2answers
-        normal_accuracy = type not in ['rand_eval', 'anti_eval']
-        for batch in tqdm(batches, desc="Evaluating"):
-            batch = torch.tensor(batch).to(torch.int64)
-            batch = batch.to(args.device)
-            prediction_scores = model(batch)[0]
-            masked_indices = get_mask_idx(batch)
-            prediction_scores = prediction_scores[np.arange(prediction_scores.shape[0]), masked_indices, :]
-            predicted_ids = torch.argmax(prediction_scores, dim=1)
-            predicted_strings = tokenizer.convert_ids_to_tokens(predicted_ids)
-            for i, (predicted, sample) in enumerate(zip(predicted_strings, batch)):
-                key = " ".join(tokenizer.convert_ids_to_tokens(sample[0:masked_indices[i]]))
-                correct_objects = answers[key]
-
-                if (predicted in correct_objects) if normal_accuracy else (predicted not in correct_objects):
-                    accurate += 1
-                total += 1
-        return accurate / total
 
     model.eval()
     result = {}
@@ -396,8 +350,7 @@ def evaluate(args, corrects, model: PreTrainedModel, tokenizer: PreTrainedTokeni
     logger.info("  Batch size = %d", args.batch_size)
     for eval_type, query2answers in corrects.items():
         with torch.no_grad():
-            #if args.numb_correct_answers > 1 and eval_type == 'rule_eval':
-            accuracy = compute_accuracy(query2answers, eval_type)
+            accuracy = compute_ranked_accuracy(query2answers)
             result[eval_type] = accuracy
 
     logger.info("***** Eval results {} *****".format(prefix))
@@ -417,9 +370,7 @@ def main():
     parser.add_argument('--batch_size', type=int, default='1024', help='Default is batch size of 256')
     parser.add_argument('--logging_steps', type=int, default='200', help='After how many batches metrics are logged')
     parser.add_argument("--model_type", type=str, default='bert')
-    parser.add_argument("--anti", action='store_true', help='Will look for jsons with correct objects for anti rules')
-    parser.add_argument("--random", action='store_true', help='Will look for jsons with correct objects for random '
-                                                              'facts')
+                              'facts')
     parser.add_argument(
         "--mlm_probability", type=float, default=0.15, help="Ratio of tokens to mask for masked language modeling loss"
     )
@@ -504,12 +455,6 @@ def main():
 
     corrects = {"rule_eval": json.load(open(data_dir / 'subject_relation2object_eval.json', 'r', )),
                 "rule_train": json.load(open(data_dir / 'subject_relation2object_train.json', 'r', ))}
-    if args.random:
-        corrects["rand_train"] = json.load(open(data_dir / 'rand_subject_relation2object_eval.json', 'r', ))
-        corrects["rand_eval"] = json.load(open(data_dir / 'rand_subject_relation2object_eval.json', 'r', ))
-    if args.anti:
-        corrects["anti_train"] = json.load(open(data_dir / 'anti_subject_relation2object_eval.json', 'r', ))
-        corrects["anti_eval"] = json.load(open(data_dir / 'anti_subject_relation2object_eval.json', 'r', ))
 
     for eval_type, d in corrects.items():
         corrects[eval_type] = batchify_dict(d, args, tokenizer)

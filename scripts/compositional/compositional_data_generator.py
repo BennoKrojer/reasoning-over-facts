@@ -61,10 +61,6 @@ class DataGenerator(ABC):
             for voc in vocab:
                 txt_file.write(voc + '\n')
 
-    @abstractmethod
-    def create_complete_facts(self, relation):
-        pass
-
     def split(self, facts, split_pos):
         train, eval = numpy.split(facts, [split_pos])
         flatten_train = train.reshape(train.shape[0]*train.shape[1], train.shape[2])
@@ -120,9 +116,9 @@ class DataGenerator(ABC):
         return subj_rel.count(x[:-1]) == self.evals_allowed_in_train - minus
 
     @abstractmethod
-    def create_incomplete_patterns(self, relation):
+    def create_complete_facts(self, relation):
         pass
-
+        
     @abstractmethod
-    def create_anti_patterns(self, relation):
+    def create_incomplete_patterns(self, relation):
         pass
