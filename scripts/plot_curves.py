@@ -124,9 +124,9 @@ if __name__ == '__main__':
                                            np.ceil(76800 / 1024))
     #
     # log_files['COMP enhanced test set'] = (Path(
-    #     config.output_dir) / 'runs' / 'transitive_enhanced' / 'comp_enh_1temp_2group_20rules_connectedTo_Jul13_12-14-02',
+    #     config.output_dir) / 'runs' / 'composition_enhanced' / 'comp_enh_1temp_2group_20rules_connectedTo_Jul13_12-14-02',
     #                     np.ceil(105200 / 1024))
-    # log_files['COMP test set'] = (Path(config.output_dir)/'runs'/'compositional'/'sampled_3layer_Jul09_21-04-35',
+    # log_files['COMP test set'] = (Path(config.output_dir)/'runs'/'composition'/'sampled_3layer_Jul09_21-04-35',
     #                              np.ceil(62400/700))
     # log_files['125 attributes'] = (
     # Path(config.output_dir) / 'runs' / 'negation' / '125attri_flayer_Jul16_12-35-21',
