@@ -1,8 +1,7 @@
 import os
 
-supported_relations = ['symmetry', 'size_1to1', 'transitive', 'reflexive', 'negation',
-                       'inverse', 'compositional', 'groupings', 'order', 'hierarchy', 'implication', 'world',
-                       'transitive_enhanced']
+supported_relations = ['symmetry', 'negation', 'inverse', 'composition',
+                       'implication', 'equivalence', 'composition_enhanced']
 
 project_base_dir = os.path.dirname(os.path.realpath(__file__))
 scripts_dir = os.path.join(project_base_dir, 'scripts')
@@ -20,18 +19,10 @@ paths = (list(scripts_dirs.values()) + list(datasets_dirs.values()) + list(vocab
 for path in paths:
     os.makedirs(path, exist_ok=True)
 
-documentation_dir = os.path.join(project_base_dir, 'Documentation')
-
-datagen_config_size_1to1 = os.path.join(scripts_dirs['size_1to1'], 'datagen_config.py')
 symmetry_config = os.path.join(scripts_dirs['symmetry'], 'datagen_config.py')
-transitive_config = os.path.join(scripts_dirs['transitive'], 'datagen_config.py')
-reflexive_config = os.path.join(scripts_dirs['reflexive'], 'datagen_config.py')
-groupings_config = os.path.join(scripts_dirs['groupings'], 'datagen_config.py')
-order_config = os.path.join(scripts_dirs['order'], 'datagen_config.py')
-hierarchy_config = os.path.join(scripts_dirs['hierarchy'], 'datagen_config.py')
+equivalence_config = os.path.join(scripts_dirs['equivalence'], 'datagen_config.py')
 implication_config = os.path.join(scripts_dirs['implication'], 'datagen_config.py')
+inverse_config = os.path.join(scripts_dirs['inverse'], 'datagen_config.py')
 negation_config = os.path.join(scripts_dirs['negation'], 'datagen_config.py')
-world_config = os.path.join(scripts_dirs['world'], 'datagen_config.py')
-enhanced_config = os.path.join(scripts_dirs['transitive_enhanced'], 'datagen_config.py')
-
-cuda_visible_device = '0'
+composition_config = os.path.join(scripts_dirs['composition'], 'datagen_config.py')
+enhanced_config = os.path.join(scripts_dirs['composition_enhanced'], 'datagen_config.py')
