@@ -69,4 +69,4 @@ if __name__ == '__main__':
     generator = InverseGenerator(DATA_DIR, datagen_config)
     generator.create_dataset()
 
-    shutil.copy(datagen_config, os.path.join(DATA_DIR, 'datagen_config.py'))
+    shutil.copy(config.inverse_config, os.path.join(DATA_DIR, 'datagen_config.py'))
