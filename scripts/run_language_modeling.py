@@ -65,7 +65,6 @@ MODEL_CLASSES = {
 
 # This file originates from HuggingFace's run_language_modeling.py and was adapted to our use case.
 
-
 class LineByLineTextDataset(Dataset):
     def __init__(self, tokenizer: PreTrainedTokenizer, args, file_path: str, block_size=512):
         assert os.path.isfile(file_path)
@@ -370,7 +369,6 @@ def main():
     parser.add_argument('--batch_size', type=int, default='1024', help='Default is batch size of 256')
     parser.add_argument('--logging_steps', type=int, default='200', help='After how many batches metrics are logged')
     parser.add_argument("--model_type", type=str, default='bert')
-                              'facts')
     parser.add_argument(
         "--mlm_probability", type=float, default=0.15, help="Ratio of tokens to mask for masked language modeling loss"
     )
