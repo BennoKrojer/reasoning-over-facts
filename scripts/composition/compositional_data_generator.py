@@ -9,7 +9,7 @@ from numpy.random import shuffle
 
 
 class DataGenerator(ABC):
-    # TODO: maybe not necessary. Could use general class for that.
+
     def __init__(self, dataset_dir, config, evals_allowed_in_train, entity_list=True):
         self.dir = dataset_dir
         self.conf = config
@@ -25,7 +25,6 @@ class DataGenerator(ABC):
         self.clear_files()
 
     def create_dataset(self):
-        self.create_vocab()
         for _ in range(self.conf.NUMBER_RULES):
             relations = sample(list(self.pattern_relations), 3)
             complete_facts = self.create_complete_facts(relations)
@@ -45,6 +44,7 @@ class DataGenerator(ABC):
                   open(os.path.join(self.dir, 'rand_subject_relation2object_eval.json'), 'w'))
         json.dump(self.subj_rel2obj_train, open(os.path.join(self.dir, 'subject_relation2object_train.json'), 'w'))
         json.dump(self.subj_rel2obj_eval, open(os.path.join(self.dir, 'subject_relation2object_eval.json'), 'w'))
+        self.create_vocab()
 
     def clear_files(self):
         if os.path.exists(self.dir):
@@ -52,7 +52,7 @@ class DataGenerator(ABC):
         os.makedirs(self.dir)
 
     def create_vocab(self):
-        vocab = ["[SEP]", "[CLS]", "[PAD]", "[MASK]", "[UNK]"] + self.relations + self.entities
+        vocab = ["[SEP]", "[CLS]", "[PAD]", "[MASK]", "[UNK]"] + self.relations + list(self.entities)
         path_to_vocab = self.dir.replace('datasets', 'vocab')
         os.makedirs(path_to_vocab, exist_ok=True)
         with open(os.path.join(path_to_vocab, 'vocab.txt'), 'w') as txt_file:
