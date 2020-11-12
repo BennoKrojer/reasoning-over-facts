@@ -5,15 +5,12 @@ We provide a way to generate datasets that contain triples of the form "entity r
 We then train BERT from scratch on this data and evaluate its ability to generalize and these rules.
 While we trained on BERT, this data generation process can in principle be used for testing any kind of language model.
 The possible rules are:
-- reflexivity
+- equivalence
 - symmetry
 - inversion
 - composition (and enhanced_composition)
-- transitivity (and hierarchies+orders as structured versions of it)
 - negation
-- equivalence
 - implication
-- groupings
 
 ### Setup
 
