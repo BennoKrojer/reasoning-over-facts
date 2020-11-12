@@ -69,17 +69,17 @@ This can be found under `probeBERT`.
 ## Citation
 If you use this code, please cite:
 
-@inproceedings{kassner-etal-2020-pretrained,
-    title = "Are Pretrained Language Models Symbolic Reasoners over Knowledge?",
-    author = {Kassner, Nora  and
-      Krojer, Benno  and
-      Sch{\"u}tze, Hinrich},
-    booktitle = "Proceedings of the 24th Conference on Computational Natural Language Learning",
-    month = nov,
-    year = "2020",
-    address = "Online",
-    publisher = "Association for Computational Linguistics",
-    url = "https://www.aclweb.org/anthology/2020.conll-1.45",
-    pages = "552--564",
-    abstract = "How can pretrained language models (PLMs) learn factual knowledge from the training set? We investigate the two most important mechanisms: reasoning and memorization. Prior work has attempted to quantify the number of facts PLMs learn, but we present, using synthetic data, the first study that investigates the causal relation between facts present in training and facts learned by the PLM. For reasoning, we show that PLMs seem to learn to apply some symbolic reasoning rules correctly but struggle with others, including two-hop reasoning. Further analysis suggests that even the application of learned reasoning rules is flawed. For memorization, we identify schema conformity (facts systematically supported by other facts) and frequency as key factors for its success.",
-}
+    @inproceedings{kassner-etal-2020-pretrained,
+        title = "Are Pretrained Language Models Symbolic Reasoners over Knowledge?",
+        author = {Kassner, Nora  and
+          Krojer, Benno  and
+          Sch{\"u}tze, Hinrich},
+        booktitle = "Proceedings of the 24th Conference on Computational Natural Language Learning",
+        month = nov,
+        year = "2020",
+        address = "Online",
+        publisher = "Association for Computational Linguistics",
+        url = "https://www.aclweb.org/anthology/2020.conll-1.45",
+        pages = "552--564",
+        abstract = "How can pretrained language models (PLMs) learn factual knowledge from the training set? We investigate the two most important mechanisms: reasoning and memorization. Prior work has attempted to quantify the number of facts PLMs learn, but we present, using synthetic data, the first study that investigates the causal relation between facts present in training and facts learned by the PLM. For reasoning, we show that PLMs seem to learn to apply some symbolic reasoning rules correctly but struggle with others, including two-hop reasoning. Further analysis suggests that even the application of learned reasoning rules is flawed. For memorization, we identify schema conformity (facts systematically supported by other facts) and frequency as key factors for its success.",
+    }
