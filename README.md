@@ -5,15 +5,12 @@ We provide a way to generate datasets that contain triples of the form "entity r
 We then train BERT from scratch on this data and evaluate its ability to generalize and these rules.
 While we trained on BERT, this data generation process can in principle be used for testing any kind of language model.
 The possible rules are:
-- reflexivity
+- equivalence
 - symmetry
 - inversion
 - composition (and enhanced_composition)
-- transitivity (and hierarchies+orders as structured versions of it)
 - negation
-- equivalence
 - implication
-- groupings
 
 ### Setup
 
@@ -72,11 +69,17 @@ For simple probing experimentation, use `probeBERT_simple.ipbynb`.
 ## Citation
 If you use this code, please cite:
 
-      @misc{kassner2020pretrained,
-            title={Are Pretrained Language Models Symbolic Reasoners Over Knowledge?}, 
-            author={Nora Kassner and Benno Krojer and Hinrich Schütze},
-            year={2020},
-            eprint={2006.10413},
-            archivePrefix={arXiv},
-            primaryClass={cs.CL}
-      }
+    @inproceedings{kassner-etal-2020-pretrained,
+        title = "Are Pretrained Language Models Symbolic Reasoners over Knowledge?",
+        author = {Kassner, Nora  and
+          Krojer, Benno  and
+          Sch{\"u}tze, Hinrich},
+        booktitle = "Proceedings of the 24th Conference on Computational Natural Language Learning",
+        month = nov,
+        year = "2020",
+        address = "Online",
+        publisher = "Association for Computational Linguistics",
+        url = "https://www.aclweb.org/anthology/2020.conll-1.45",
+        pages = "552--564",
+        abstract = "How can pretrained language models (PLMs) learn factual knowledge from the training set? We investigate the two most important mechanisms: reasoning and memorization. Prior work has attempted to quantify the number of facts PLMs learn, but we present, using synthetic data, the first study that investigates the causal relation between facts present in training and facts learned by the PLM. For reasoning, we show that PLMs seem to learn to apply some symbolic reasoning rules correctly but struggle with others, including two-hop reasoning. Further analysis suggests that even the application of learned reasoning rules is flawed. For memorization, we identify schema conformity (facts systematically supported by other facts) and frequency as key factors for its success.",
+    }
