@@ -13,7 +13,7 @@ class EnhancedGenerator(DataGenerator):
 
     def __init__(self, dataset_dir, config, groupsize):
         self.groupsize = groupsize
-        left_out_eval = int((groupsize)**2)
+        left_out_eval = int((groupsize/3)**2)
         super().__init__(dataset_dir, config, evals_allowed_in_train=0, numb_left_out_for_eval=left_out_eval)
 
     def create_complete_facts(self, relation):
@@ -33,12 +33,12 @@ class EnhancedGenerator(DataGenerator):
 
             # connecting class members between themselves or to a class token
             for class_, class_token in [(A, attrA), (B, attrB), (C, attrC)]:
-                for member in class_:
-                    complete_group.append((member, 'is', class_token))
-                # for i in range(len(class_)):
-                #     for j in range(i+1, len(class_)):
-                #         complete_group.append((class_[i], 'connectedto', class_[j]))
-                #         complete_group.append((class_[j], 'connectedto', class_[i]))
+            #     for member in class_:
+            #         complete_group.append((member, 'is', class_token))
+                for i in range(len(class_)):
+                    for j in range(i+1, len(class_)):
+                        complete_group.append((class_[i], 'connectedto', class_[j]))
+                        complete_group.append((class_[j], 'connectedto', class_[i]))
 
             # making transitive connections
             for a in A:

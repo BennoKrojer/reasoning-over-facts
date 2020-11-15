@@ -54,7 +54,11 @@ if __name__ == '__main__':
         "--dataset_name", default=None, type=str, required=True, help="The name of the dataset you want to create.")
     args = parser.parse_args()
     DATA_DIR = os.path.join(config.datasets_dirs['symmetry'], args.dataset_name)
-    os.makedirs(DATA_DIR, exist_ok=False)
+    try:
+        os.makedirs(DATA_DIR, exist_ok=False)
+    except OSError:
+        overwrite = True if input('Overwrite dataset: y/n\n') == 'y' else False
+        os.makedirs(DATA_DIR, exist_ok=True)
     generator = SymmetryGenerator(DATA_DIR, datagen_config)
     generator.create_dataset()
 

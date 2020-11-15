@@ -65,6 +65,9 @@ Here is an exmaple command for symmetry:
 
 We also provide our Notebooks and data for probing BERT for consistent predictions regarding symmetry & inversion.
 This can be found under `probeBERT`.
+For our bigger/smaller-than-probes, you can use `probeBERT_order.ibynb`.
+For the other probes that just flipped subject and object, use `probeBERT_reverse.ipynb`.
+For simple probing experimentation, use `probeBERT_simple.ipbynb`.
 
 ## Citation
 If you use this code, please cite:

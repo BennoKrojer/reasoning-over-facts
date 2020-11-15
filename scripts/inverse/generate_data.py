@@ -5,7 +5,7 @@ from random import sample
 
 import numpy
 import config
-from scripts.inverse.inverse_data_generator import InverseDataGenerator
+from scripts.inverse.data_generator import InverseDataGenerator
 from scripts.inverse import datagen_config
 
 
@@ -16,18 +16,13 @@ class InverseGenerator(InverseDataGenerator):
 
     def create_complete_facts(self, relations):
         complete_facts = []
-        confuse = []
         for _ in range(datagen_config.FACTS_PER_RELATION):
-            a, b, c, d  = sample(self.entities, 4)
+            a, b = sample(self.entities, 2)
             if 1 == numpy.random.randint(2):
                 complete_facts.append(((a, relations[0], b), (b, relations[1], a)))
-                confuse.append((a, relations[1], d))
-                confuse.append((b, relations[0], c))
             else:
                 complete_facts.append(((a, relations[1], b), (b, relations[0], a)))
-                confuse.append((b, relations[1], c))
-                confuse.append((a, relations[0], d))
-        return numpy.asarray(complete_facts), numpy.asarray(confuse)
+        return numpy.asarray(complete_facts)
 
     def create_incomplete_patterns(self, relation):
         train = []
@@ -65,8 +60,12 @@ if __name__ == '__main__':
         "--dataset_name", default=None, type=str, required=True, help="The name of the dataset you want to create.")
     args = parser.parse_args()
     DATA_DIR = os.path.join(config.datasets_dirs['inverse'], args.dataset_name)
-    os.makedirs(DATA_DIR, exist_ok=False)
+    try:
+        os.makedirs(DATA_DIR, exist_ok=False)
+    except OSError:
+        overwrite = True if input('Overwrite dataset: y/n\n') == 'y' else False
+        os.makedirs(DATA_DIR, exist_ok=True)
     generator = InverseGenerator(DATA_DIR, datagen_config)
     generator.create_dataset()
 
-    shutil.copy(config.inverse_config, os.path.join(DATA_DIR, 'datagen_config.py'))
+    shutil.copy(config.implication_config, os.path.join(DATA_DIR, 'datagen_config.py'))

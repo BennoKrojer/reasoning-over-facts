@@ -4,7 +4,7 @@ import shutil
 from random import sample
 import numpy
 import config
-from scripts.composition.compositional_data_generator import DataGenerator
+from scripts.composition.data_generator import DataGenerator
 from scripts.composition import datagen_config
 
 

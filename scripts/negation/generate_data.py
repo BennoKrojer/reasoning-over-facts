@@ -5,7 +5,7 @@ from random import sample
 
 import numpy
 import config
-from scripts.negation.negation_data_generator import NegationDataGenerator
+from scripts.negation.data_generator import NegationDataGenerator
 from scripts.negation import datagen_config
 
 
@@ -100,7 +100,11 @@ if __name__ == '__main__':
         "--dataset_name", default=None, type=str, required=True, help="The name of the dataset you want to create.")
     args = parser.parse_args()
     DATA_DIR = os.path.join(config.datasets_dirs['negation'], args.dataset_name)
-    os.makedirs(DATA_DIR, exist_ok=False)
+    try:
+        os.makedirs(DATA_DIR, exist_ok=False)
+    except OSError:
+        overwrite = True if input('Overwrite dataset: y/n\n') == 'y' else False
+        os.makedirs(DATA_DIR, exist_ok=True)
     generator = NegationGenerator(DATA_DIR, datagen_config)
     generator.create_dataset()
 
