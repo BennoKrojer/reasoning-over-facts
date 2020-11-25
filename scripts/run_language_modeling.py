@@ -314,7 +314,7 @@ def evaluate(args, corrects, model: PreTrainedModel, tokenizer: PreTrainedTokeni
         return [list(batch[i]).index(mask_token) for i in range(batch.shape[0])]
 
     def compute_ranked_accuracy(query2answers):
-        print('Computing ranked acc')
+
         accurate = 0
         total = 0
         answers, batches = query2answers
