@@ -346,6 +346,7 @@ def evaluate(args, corrects, model: PreTrainedModel, tokenizer: PreTrainedTokeni
     for eval_type, query2answers in corrects.items():
         with torch.no_grad():
             accuracy = compute_ranked_accuracy(query2answers)
+            accuracy = round(accuracy, 4)
             result[eval_type+'_ranked_acc'] = accuracy
 
     logger.info("***** Eval results {} *****".format(prefix))
