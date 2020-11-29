@@ -72,8 +72,6 @@ class LineByLineTextDataset(Dataset):
         directory, filename = os.path.split(file_path)
         cached_features_file = os.path.join(directory,
                                             args.model_type + "_cached_lm_" + str(block_size) + "_" + filename)
-
-        print(cached_features_file)
         if args.overwrite_cache:
             print(args.overwrite_cache)
         if os.path.exists(cached_features_file) and not args.overwrite_cache:
@@ -241,7 +239,6 @@ def train(args, train_dataset, corrects, model: PreTrainedModel, tokenizer: PreT
     for _ in train_iterator:
         epoch_iterator = tqdm(train_dataloader, desc="Iteration", disable=False)
         for step, batch in enumerate(epoch_iterator):
-            # print(batch.shape)
             # Skip past any already trained steps if resuming training
             if steps_trained_in_current_epoch > 0:
                 steps_trained_in_current_epoch -= 1
@@ -274,7 +271,7 @@ def train(args, train_dataset, corrects, model: PreTrainedModel, tokenizer: PreT
                         tb_writer.add_scalar("{}".format(key), value, global_step)
                     tb_writer.add_scalar("lr", scheduler.get_lr()[0], global_step)
                     tb_writer.add_scalar("loss", (tr_loss - logging_loss) / args.logging_steps, global_step)
-                    print((tr_loss - logging_loss) / args.logging_steps)
+                    # print((tr_loss - logging_loss) / args.logging_steps)
 
                     logging_loss = tr_loss
 
@@ -317,7 +314,7 @@ def evaluate(args, corrects, model: PreTrainedModel, tokenizer: PreTrainedTokeni
         return [list(batch[i]).index(mask_token) for i in range(batch.shape[0])]
 
     def compute_ranked_accuracy(query2answers):
-        print('Computing ranked acc')
+
         accurate = 0
         total = 0
         answers, batches = query2answers
@@ -337,7 +334,6 @@ def evaluate(args, corrects, model: PreTrainedModel, tokenizer: PreTrainedTokeni
                 ranked_predictions = tokenizer.convert_ids_to_tokens(predicted_ids)
 
                 accurate += len(set(ranked_predictions) & set(correct_objects))/numb_correct_answers
-                print(accurate)
                 total += 1.0
 
         return accurate / total
