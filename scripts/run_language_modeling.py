@@ -271,7 +271,7 @@ def train(args, train_dataset, corrects, model: PreTrainedModel, tokenizer: PreT
                     results = evaluate(args, corrects, model, tokenizer)
 
                     for key, value in results.items():
-                        tb_writer.add_scalar("eval_{}".format(key), value, global_step)
+                        tb_writer.add_scalar("{}".format(key), value, global_step)
                     tb_writer.add_scalar("lr", scheduler.get_lr()[0], global_step)
                     tb_writer.add_scalar("loss", (tr_loss - logging_loss) / args.logging_steps, global_step)
                     print((tr_loss - logging_loss) / args.logging_steps)
@@ -330,7 +330,7 @@ def evaluate(args, corrects, model: PreTrainedModel, tokenizer: PreTrainedTokeni
 
             for i, (prediction, sample) in enumerate(zip(prediction_scores, batch)):
 
-                key = " ".join(tokenizer.convert_ids_to_tokens(sample[0:masked_indices[i]]))
+                key = " ".join(tokenizer.convert_ids_to_tokens(sample[1:masked_indices[i]]))
                 correct_objects = answers[key]
                 numb_correct_answers = len(correct_objects)
                 predicted_ids = torch.argsort(prediction, dim=0, descending=True)[:numb_correct_answers]
@@ -350,7 +350,7 @@ def evaluate(args, corrects, model: PreTrainedModel, tokenizer: PreTrainedTokeni
     for eval_type, query2answers in corrects.items():
         with torch.no_grad():
             accuracy = compute_ranked_accuracy(query2answers)
-            result[eval_type] = accuracy
+            result[eval_type+'_ranked_acc'] = accuracy
 
     logger.info("***** Eval results {} *****".format(prefix))
     for key in sorted(result.keys()):
@@ -451,8 +451,8 @@ def main():
     else:
         args.block_size = min(args.block_size, tokenizer.max_len)
 
-    corrects = {"rule_eval": json.load(open(data_dir / 'subject_relation2object_eval.json', 'r', )),
-                "rule_train": json.load(open(data_dir / 'subject_relation2object_train.json', 'r', ))}
+    corrects = {"eval": json.load(open(data_dir / 'subject_relation2object_eval.json', 'r', )),
+                "train": json.load(open(data_dir / 'subject_relation2object_train.json', 'r', ))}
 
     for eval_type, d in corrects.items():
         corrects[eval_type] = batchify_dict(d, args, tokenizer)
