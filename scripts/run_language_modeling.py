@@ -439,7 +439,10 @@ def main():
 
     # Load pretrained model and tokenizer
     config_class, model_class, tokenizer_class = MODEL_CLASSES[args.model_type]
-    model_config = config_class()
+    if args.relation != 'negation':
+        model_config = config_class()
+    else:
+        model_config = config_class(num_hidden_layers=4)
     tokenizer = tokenizer_class.from_pretrained(args.tokenizer_name)
 
     if args.block_size <= 0:
