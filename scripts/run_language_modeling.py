@@ -403,11 +403,11 @@ def main():
     set_seed(args)
 
     # Load pretrained model and tokenizer
+    tokenizer = BertTokenizer.from_pretrained(args.tokenizer_name)
     if args.relation != 'negation':
         model_config = BertConfig()
     else:
-        model_config = BertConfig(num_hidden_layers=2, vocab_size=10000, num_attention_heads=1, hidden_size=32)
-    tokenizer = BertTokenizer.from_pretrained(args.tokenizer_name)
+        model_config = BertConfig(num_hidden_layers=4, vocab_size=tokenizer.vocab_size)
 
     if args.block_size <= 0:
         args.block_size = tokenizer.max_len
