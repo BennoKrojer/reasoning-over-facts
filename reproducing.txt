@@ -22,3 +22,17 @@ Eval_Accuracy_intersected = 0.2556610664718773
 Dec 5, 9:00:
 new code is equal to old code. let's use new code.
 vocab_size=6506, data=neg_sampled, question: does it get the reported acc? or did we back then simply not increase vocab size?
+
+
+INFLUENCE OF VOCAB_SIZE:
+relevant code pieces:
+
+Embeddings:
+modeling_bert.py 615
+modeling_bert.py 149
+-> shouldn't be a problem right? because the useless embeddings dont get any gradient updates
+
+modeling_bert.py 465
+-> this might be a problem
+it predicts probs for 30522 labels, e.g. [0.1, 0.0001, ...]
+but 25.000 of them will always be =0 so it quickly has to learn to ignore those
