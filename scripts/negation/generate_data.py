@@ -4,9 +4,10 @@ import shutil
 from random import sample
 
 import numpy
+
 import config
-from scripts.negation.data_generator import NegationDataGenerator
 from scripts.negation import datagen_config
+from scripts.negation.data_generator import NegationDataGenerator
 
 
 class NegationGenerator(NegationDataGenerator):
@@ -61,37 +62,17 @@ class NegationGenerator(NegationDataGenerator):
         eval = []
         for _ in range(datagen_config.FACTS_PER_RELATION):
             e = sample(self.entities, 1)[0]
-            pos = sample(self.random_attributes, 1)[0]
-            if 1 == numpy.random.randint(2):
+            pos, neg = sample(self.attributes, 1)[0]
 
-                train.append((e, relation, pos))
-                eval.append((e, 'not ' + relation, pos))
+            if numpy.random.rand() < 0.5:
+                a = pos
             else:
-                train.append((e, 'not ' + relation, pos))
-                eval.append((e, relation, pos))
+                a = neg
 
+            train.append((e, relation, a))
+            eval.append((e, 'not ' + relation, a))
         eval = list(filter(lambda x: self.check_train(x, train, 0), eval))
         return numpy.asarray(train), numpy.asarray(eval)
-    # def create_anti_patterns(self, relations):
-    #     train = []
-    #     eval = []
-    #     for i in range(datagen_config.FACTS_PER_RELATION):
-    #         if i < 0.9 * datagen_config.FACTS_PER_RELATION:
-    #             a, b, c = sample(self.entities, 3)
-    #             if (a, relations[0], b) not in train and (b, relations[1], c) not in train:
-    #                 train.append((a, relations[0], b))
-    #                 train.append((b, relations[1], c))
-    #         else:
-    #             a, b = sample(self.entities, 2)
-    #             if (a, relations[0], b) not in train and (b, relations[1], a) not in train:
-    #                 if 1 == numpy.random.randint(2):
-    #                     train.append((a, relations[0], b))
-    #                     eval.append((b, relations[1], a))
-    #                 else:
-    #                     train.append((a, relations[1], b))
-    #                     eval.append((b, relations[0], a))
-    #     eval = list(filter(lambda x: self.check_train(x, train, 0), eval))
-    #     return numpy.asarray(train), numpy.asarray(eval)
 
 
 if __name__ == '__main__':
@@ -100,11 +81,7 @@ if __name__ == '__main__':
         "--dataset_name", default=None, type=str, required=True, help="The name of the dataset you want to create.")
     args = parser.parse_args()
     DATA_DIR = os.path.join(config.datasets_dirs['negation'], args.dataset_name)
-    try:
-        os.makedirs(DATA_DIR, exist_ok=False)
-    except OSError:
-        overwrite = True if input('Overwrite dataset: y/n\n') == 'y' else False
-        os.makedirs(DATA_DIR, exist_ok=True)
+    os.makedirs(DATA_DIR, exist_ok=False)
     generator = NegationGenerator(DATA_DIR, datagen_config)
     generator.create_dataset()
 

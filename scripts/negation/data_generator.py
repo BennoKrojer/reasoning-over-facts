@@ -25,12 +25,9 @@ class NegationDataGenerator(ABC):
         self.pattern_relations, self.random_relations = numpy.split(self.relations, [relations_split])
         self.entities = ['e' + str(i) for i in range(self.conf.ENTITYTYPE_AMOUNT)] if entity_list else set()
         self.attributes = [('a' + str(i), 'a' + str(i+1)) for i in range(0,  self.conf.ATTRIBUTE_AMOUNT, 2)]
-        self.random_attributes = ['b' + str(i) for i in range(self.conf.ATTRIBUTE_AMOUNT)]
         self.subj_rel2obj_train, self.subj_rel2obj_eval = defaultdict(list), defaultdict(list)
         self.rand_subj_rel2obj_train, self.rand_subj_rel2obj_eval = defaultdict(list), defaultdict(list)
         self.clear_files()
-        self.classification_file = open(Path(self.dir)/'classification.tsv', 'a')
-        self.classification_file.write('fact\tlabel\tsource\n')
 
     def create_dataset(self):
         self.create_vocab()
@@ -46,16 +43,11 @@ class NegationDataGenerator(ABC):
             rand_train, rand_eval = self.create_incomplete_patterns(relation)
             self.write(rand_train, 'rand_train', self.rand_subj_rel2obj_train)
             self.write(rand_eval, 'rand_eval', self.rand_subj_rel2obj_eval)
-        # for relations in zip(self.anti_relations[::2], self.anti_relations[1::2]):
-        #     anti_train, anti_eval = self.create_anti_patterns(relations)
-        #     self.write(anti_train, 'anti_train', self.anti_subj_rel2obj_train)
-        #     self.write(anti_eval, 'anti_eval', self.anti_subj_rel2obj_eval)
 
         json.dump(self.rand_subj_rel2obj_train, open(os.path.join(self.dir, 'rand_subject_relation2object_train.json'), 'w'))
         json.dump(self.rand_subj_rel2obj_eval, open(os.path.join(self.dir, 'rand_subject_relation2object_eval.json'), 'w'))
         json.dump(self.subj_rel2obj_train, open(os.path.join(self.dir, 'subject_relation2object_train.json'), 'w'))
         json.dump(self.subj_rel2obj_eval, open(os.path.join(self.dir, 'subject_relation2object_eval.json'), 'w'))
-        self.classification_file.close()
 
     def clear_files(self):
         if os.path.exists(self.dir):
@@ -63,7 +55,7 @@ class NegationDataGenerator(ABC):
         os.makedirs(self.dir)
 
     def create_vocab(self):
-        vocab = ["[SEP]", "[CLS]", "[PAD]", "[MASK]", "[UNK]", "not"] + self.relations + self.entities + self.random_attributes
+        vocab = ["[SEP]", "[CLS]", "[PAD]", "[MASK]", "[UNK]", "not"] + self.relations + self.entities
         for a,b in self.attributes:
             vocab.append(a)
             vocab.append(b)
@@ -93,20 +85,7 @@ class NegationDataGenerator(ABC):
                 train += chain[:-1]
                 to_be_masked.append(chain[-1])
             to_be_masked = list(filter(lambda x: self.check_train(x, train, 0), to_be_masked))
-            self.write_tsv(train, to_be_masked)
         return train, to_be_masked
-
-    def write_tsv(self, train, to_be_masked):
-        for fact in train:
-            fact = ' '.join(fact)
-            neg_fact = fact.replace('not ', '') if 'not' in fact else fact.replace('r', 'not r')
-            self.classification_file.write(f'{fact}\t1\ttrain\n')
-            self.classification_file.write(f'{neg_fact}\t0\ttrain\n')
-        for fact in to_be_masked:
-            fact = ' '.join(fact)
-            neg_fact = fact.replace('not ', '') if 'not' in fact else fact.replace('r', 'not r')
-            self.classification_file.write(f'{fact}\t1\teval\n')
-            self.classification_file.write(f'{neg_fact}\t0\teval\n')
 
     def write(self, triples, type, obj_dict):
         if 'train' in type and self.conf.shuffle_train:
@@ -147,7 +126,3 @@ class NegationDataGenerator(ABC):
     @abstractmethod
     def create_incomplete_patterns(self, relation):
         pass
-
-    # @abstractmethod
-    # def create_anti_patterns(self, relation):
-    #     pass

@@ -4,7 +4,6 @@ import json
 import logging
 import os
 import pickle
-import math
 import random
 import re
 import shutil
@@ -16,62 +15,31 @@ import numpy as np
 import torch
 from torch.nn.utils.rnn import pad_sequence
 from torch.utils.data import DataLoader, Dataset, RandomSampler
+from torch.utils.tensorboard import SummaryWriter
 from tqdm import tqdm, trange
-import config
-
-
 from transformers import (
-    WEIGHTS_NAME,
-    AdamW,
     BertConfig,
     BertForMaskedLM,
     BertTokenizer,
-    CamembertConfig,
-    CamembertForMaskedLM,
-    CamembertTokenizer,
-    DistilBertConfig,
-    DistilBertForMaskedLM,
-    DistilBertTokenizer,
-    GPT2Config,
-    GPT2LMHeadModel,
-    GPT2Tokenizer,
-    OpenAIGPTConfig,
-    OpenAIGPTLMHeadModel,
-    OpenAIGPTTokenizer,
+    AdamW,
     PreTrainedModel,
     PreTrainedTokenizer,
-    RobertaConfig,
-    RobertaForMaskedLM,
-    RobertaTokenizer,
-    get_linear_schedule_with_warmup,
+    get_linear_schedule_with_warmup
 )
 
-
-try:
-    from torch.utils.tensorboard import SummaryWriter
-except ImportError:
-    from tensorboardX import SummaryWriter
+import config
 
 logger = logging.getLogger(__name__)
 
-MODEL_CLASSES = {
-    "gpt2": (GPT2Config, GPT2LMHeadModel, GPT2Tokenizer),
-    "openai-gpt": (OpenAIGPTConfig, OpenAIGPTLMHeadModel, OpenAIGPTTokenizer),
-    "bert": (BertConfig, BertForMaskedLM, BertTokenizer),
-    "roberta": (RobertaConfig, RobertaForMaskedLM, RobertaTokenizer),
-    "distilbert": (DistilBertConfig, DistilBertForMaskedLM, DistilBertTokenizer),
-    "camembert": (CamembertConfig, CamembertForMaskedLM, CamembertTokenizer),
-}
 
-# This file originates from HuggingFace's run_language_modeling.py and was adapted to our use case.
+# This file originates from HuggingFace's run_language_modeling.py and was adapted to our needs.
 
 class LineByLineTextDataset(Dataset):
     def __init__(self, tokenizer: PreTrainedTokenizer, args, file_path: str, block_size=512):
         assert os.path.isfile(file_path)
 
         directory, filename = os.path.split(file_path)
-        cached_features_file = os.path.join(directory,
-                                            args.model_type + "_cached_lm_" + str(block_size) + "_" + filename)
+        cached_features_file = os.path.join(directory, "bert_cached_lm_" + str(block_size) + "_" + filename)
         if args.overwrite_cache:
             print(args.overwrite_cache)
         if os.path.exists(cached_features_file) and not args.overwrite_cache:
@@ -326,18 +294,16 @@ def evaluate(args, corrects, model: PreTrainedModel, tokenizer: PreTrainedTokeni
             prediction_scores = prediction_scores[np.arange(prediction_scores.shape[0]), masked_indices, :]
 
             for i, (prediction, sample) in enumerate(zip(prediction_scores, batch)):
-
                 key = " ".join(tokenizer.convert_ids_to_tokens(sample[1:masked_indices[i]]))
                 correct_objects = answers[key]
                 numb_correct_answers = len(correct_objects)
                 predicted_ids = torch.argsort(prediction, dim=0, descending=True)[:numb_correct_answers]
                 ranked_predictions = tokenizer.convert_ids_to_tokens(predicted_ids)
 
-                accurate += len(set(ranked_predictions) & set(correct_objects))/numb_correct_answers
+                accurate += len(set(ranked_predictions) & set(correct_objects)) / numb_correct_answers
                 total += 1.0
 
         return accurate / total
-
 
     model.eval()
     result = {}
@@ -347,7 +313,7 @@ def evaluate(args, corrects, model: PreTrainedModel, tokenizer: PreTrainedTokeni
         with torch.no_grad():
             accuracy = compute_ranked_accuracy(query2answers)
             accuracy = round(accuracy, 4)
-            result[eval_type+'_ranked_acc'] = accuracy
+            result[eval_type + '_ranked_acc'] = accuracy
 
     logger.info("***** Eval results {} *****".format(prefix))
     for key in sorted(result.keys()):
@@ -361,11 +327,11 @@ def main():
     parser.add_argument('--relation', '-r', type=str, required=True,
                         help=f'relation type that is trained on. Available :{", ".join(config.supported_relations)}')
     parser.add_argument('--dataset_name', '-d', required=True, type=str, help='dataset used for train, eval and vocab')
-    parser.add_argument('--output_model_name', '-o', type=str, default='',help='Defaults to dataset_name if not stated.')
+    parser.add_argument('--output_model_name', '-o', type=str, default='',
+                        help='Defaults to dataset_name if not stated.')
     parser.add_argument('--epochs', type=int, default='2000', help='Default is 2000 epochs')
     parser.add_argument('--batch_size', type=int, default='1024', help='Default is batch size of 256')
     parser.add_argument('--logging_steps', type=int, default='200', help='After how many batches metrics are logged')
-    parser.add_argument("--model_type", type=str, default='bert')
     parser.add_argument(
         "--mlm_probability", type=float, default=0.15, help="Ratio of tokens to mask for masked language modeling loss"
     )
@@ -417,7 +383,6 @@ def main():
     args.tokenizer_name = f'data/{args.relation}/vocab/{args.dataset_name}/'
     args.output_dir = f'output/models/{args.relation}/{args.output_model_name}'
 
-
     if os.path.exists(args.output_dir) and os.listdir(args.output_dir) and not args.overwrite_output_dir:
         raise ValueError(
             f"Output directory ({args.output_dir}) already exists and is not empty. Use --overwrite_output_dir to overcome."
@@ -438,12 +403,11 @@ def main():
     set_seed(args)
 
     # Load pretrained model and tokenizer
-    config_class, model_class, tokenizer_class = MODEL_CLASSES[args.model_type]
     if args.relation != 'negation':
-        model_config = config_class()
+        model_config = BertConfig()
     else:
-        model_config = config_class(num_hidden_layers=4)
-    tokenizer = tokenizer_class.from_pretrained(args.tokenizer_name)
+        model_config = BertConfig(num_hidden_layers=2, vocab_size=10000, num_attention_heads=1, hidden_size=32)
+    tokenizer = BertTokenizer.from_pretrained(args.tokenizer_name)
 
     if args.block_size <= 0:
         args.block_size = tokenizer.max_len
@@ -458,7 +422,7 @@ def main():
         corrects[eval_type] = batchify_dict(d, args, tokenizer)
 
     logger.info("Training new model from scratch")
-    model = model_class(config=model_config)
+    model = BertForMaskedLM(config=model_config)
     model.to(args.device)
 
     logger.info("Training/evaluation parameters %s", args)
@@ -484,10 +448,9 @@ def main():
     torch.save(args, os.path.join(args.output_dir, "training_args.bin"))
 
     # Load a trained model and vocabulary that you have fine-tuned
-    model = model_class.from_pretrained(args.output_dir)
-    tokenizer = tokenizer_class.from_pretrained(args.output_dir)
+    model = BertForMaskedLM.from_pretrained(args.output_dir)
+    tokenizer = BertTokenizer.from_pretrained(args.output_dir)
     model.to(args.device)
-
 
     # Evaluation
     results = {}
@@ -497,7 +460,7 @@ def main():
         global_step = checkpoint.split("-")[-1] if len(checkpoints) > 1 else ""
         prefix = checkpoint.split("/")[-1] if checkpoint.find("checkpoint") != -1 else ""
 
-        model = model_class.from_pretrained(checkpoint)
+        model = BertForMaskedLM.from_pretrained(checkpoint)
         model.to(args.device)
         result = evaluate(args, corrects, model, tokenizer, prefix=prefix)
         result = dict((k + "_{}".format(global_step), v) for k, v in result.items())
