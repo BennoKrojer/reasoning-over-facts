@@ -404,10 +404,7 @@ def main():
 
     # Load pretrained model and tokenizer
     tokenizer = BertTokenizer.from_pretrained(args.tokenizer_name)
-    if args.relation != 'negation':
-        model_config = BertConfig(vocab_size=tokenizer.vocab_size)
-    else:
-        model_config = BertConfig(num_hidden_layers=4, vocab_size=tokenizer.vocab_size)
+    model_config = BertConfig(vocab_size=tokenizer.vocab_size)
 
     if args.block_size <= 0:
         args.block_size = tokenizer.max_len
