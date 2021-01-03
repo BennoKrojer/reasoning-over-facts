@@ -49,7 +49,7 @@ Here is an exmaple command for symmetry:
 
     python3 -m scripts.run_language_modeling \
     --relation symmetry
-    --dataset_name StandardSym
+    --dataset_name default_setup
 
 ### Probing BERT
 
