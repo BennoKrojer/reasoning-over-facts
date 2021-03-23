@@ -1,5 +1,5 @@
 # Are Pretrained Language Models  Symbolic Reasoners over Knowledge?
-This repository contains the code for ["Are Pretrained Language Models  Symbolic Reasoners over Knowledge?"](https://arxiv.org/pdf/2006.10413v2.pdf).
+This repository contains the code for ["Are Pretrained Language Models  Symbolic Reasoners over Knowledge?"](https://www.aclweb.org/anthology/2020.conll-1.45/).
 
 We provide a way to generate datasets that contain triples of the form "entity relation entity". These triplets follow different symbolic rules.
 We then train BERT from scratch on this data and evaluate its ability to generalize these rules.
